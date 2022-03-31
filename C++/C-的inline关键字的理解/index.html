@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              ABOUT
+              TAGS
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              TAGS
+              ABOUT
               
               
             </a>
@@ -468,22 +468,15 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>C++中inline关键字的理解</h1>
-<h2 id="一、为什么使用inline">一、为什么使用inline</h2>
-<p>​	使用inline关键词 在c/c++中，为了解决一些频繁调用的小函数大量消耗栈空间（栈内存）的问题，特别的引入了inline修饰符，表示为<a href="https://link.juejin.cn?target=https%3A%2F%2Fso.csdn.net%2Fso%2Fsearch%3Fq%3D%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0%26spm%3D1001.2101.3001.7020">内联函数</a>。</p>
-<p>​	栈空间就是<strong>放置程序的局部数据（也就是函数内数据）的内存空间</strong>。</p>
-<p>​	在系统下，栈空间是有限的，假如频繁大量的使用就会造成因栈空间不足而导致程序出错的问题，如，函数的死循环<a href="https://link.juejin.cn?target=https%3A%2F%2Fso.csdn.net%2Fso%2Fsearch%3Fq%3D%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8%26spm%3D1001.2101.3001.7020">递归调用</a>的最终结果就是导致栈内存空间枯竭。</p>
-<h2 id="二、使用的注意点">二、使用的注意点</h2>
-<ul>
-<li>
-<p>该关键字只适用代码量较小的函数，当出现while、switch等结构，一般不使用</p>
+        <h1 id="C-中inline关键字的理解"><a href="#C-中inline关键字的理解" class="headerlink" title="C++中inline关键字的理解"></a>C++中inline关键字的理解</h1><h2 id="一、为什么使用inline"><a href="#一、为什么使用inline" class="headerlink" title="一、为什么使用inline"></a>一、为什么使用inline</h2><p>​    使用inline关键词 在c/c++中，为了解决一些频繁调用的小函数大量消耗栈空间（栈内存）的问题，特别的引入了inline修饰符，表示为<a href="https://link.juejin.cn?target=https%3A%2F%2Fso.csdn.net%2Fso%2Fsearch%3Fq%3D%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0%26spm%3D1001.2101.3001.7020">内联函数</a>。</p>
+<p>​    栈空间就是<strong>放置程序的局部数据（也就是函数内数据）的内存空间</strong>。</p>
+<p>​    在系统下，栈空间是有限的，假如频繁大量的使用就会造成因栈空间不足而导致程序出错的问题，如，函数的死循环<a href="https://link.juejin.cn?target=https%3A%2F%2Fso.csdn.net%2Fso%2Fsearch%3Fq%3D%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8%26spm%3D1001.2101.3001.7020">递归调用</a>的最终结果就是导致栈内存空间枯竭。</p>
+<h2 id="二、使用的注意点"><a href="#二、使用的注意点" class="headerlink" title="二、使用的注意点"></a>二、使用的注意点</h2><ul>
+<li><p>该关键字只适用代码量较小的函数，当出现while、switch等结构，一般不使用</p>
 </li>
-<li>
-<p>.并且不能内联函数本身不能是直接递归函数（即，自己内部还调用自己的函数）</p>
+<li><p>.并且不能内联函数本身不能是直接递归函数（即，自己内部还调用自己的函数）</p>
 </li>
-<li>
-<p>联是以**代码膨胀（复制）**为代价，仅仅省去了函数调用的开销，从而提高函数的执行效率。<br>
-如果执行函数体内代码的时间，相比于函数调用的开销较大，那么效率的收获会很少。另一方面，每一处内联函数的调用都要复制代码，将使程序的总代码量增大，消耗更多的内存空间。</p>
+<li><p>联是以<strong>代码膨胀（复制）</strong>为代价，仅仅省去了函数调用的开销，从而提高函数的执行效率。<br> 如果执行函数体内代码的时间，相比于函数调用的开销较大，那么效率的收获会很少。另一方面，每一处内联函数的调用都要复制代码，将使程序的总代码量增大，消耗更多的内存空间。</p>
 </li>
 </ul>
 
@@ -631,7 +624,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++中inline关键字的理解</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8inline"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、为什么使用inline</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、使用的注意点</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#C-%E4%B8%ADinline%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++中inline关键字的理解</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8inline"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、为什么使用inline</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、使用的注意点</span></a></li></ol></li></ol>
         
         </div>
       </aside>

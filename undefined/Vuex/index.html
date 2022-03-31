@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://yummyx02.github.io/hexo/解决npm-install-g-hexo-cli报错hexo-not-found问题/">
+  <link rel="canonical" href="https://yummyx02.github.io/undefined/Vuex/">
   <title>
     
-      解决npm install -g hexo-cli报错hexo not found问题 - either strugle | or die
+      Vuex - either strugle | or die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -390,7 +390,7 @@
             <div class="tags">
               
             </div>
-            <h1>解决npm install -g hexo-cli报错hexo not found问题</h1>
+            <h1>Vuex</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by 王翔_x on
@@ -402,11 +402,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">6</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">568</span> In Total
+              Words <span class="post-count">1.4k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -468,31 +468,74 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="解决npm-install-g-hexo-cli报错hexo-not-found问题"><a href="#解决npm-install-g-hexo-cli报错hexo-not-found问题" class="headerlink" title="解决npm install -g hexo-cli报错hexo not found问题"></a>解决npm install -g hexo-cli报错hexo not found问题</h1><p>作为一个初入IT的小白，最近想搭建一个个人博客算是记录自己的学习，但是安装hexo的时候一直报错bash: hexo: command not found，官网的安装命令如下：</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.npm install hexo-cli -g</span><br><span class="line"><span class="number">2</span>.hexo init blog</span><br><span class="line"><span class="number">3</span>.cd blog</span><br><span class="line"><span class="number">4</span>.npm install</span><br><span class="line"><span class="number">5</span>.hexo server</span><br><span class="line"><span class="number">1.2.3.4</span>.<span class="number">5</span>.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="总结网上解决这个错误的方法有以下几种："><a href="#总结网上解决这个错误的方法有以下几种：" class="headerlink" title="总结网上解决这个错误的方法有以下几种："></a>总结网上解决这个错误的方法有以下几种：</h4><ul>
-<li>node的npm环境没有配好，重装node，默认路径安装解决</li>
-<li>利用git bash安装的时候没有安装git的，但我觉得你都已经在使用git bash了没有git怎么打开的？小纠结~</li>
-<li>然后还有node不是最新版本的这样</li>
-<li>Mac电脑报错命令前面要加suto这样。但是我的电脑是win10，所以也不行。<br> 唉，安装了好久好久，failed again and again.中间遇到好多人给我说怎么解决，基本就是上面的几种方法加重装系统，实在不适合我。（ps：我才重装完系统没几天~）</li>
-</ul>
-<h4 id="附上我的解决方案："><a href="#附上我的解决方案：" class="headerlink" title="附上我的解决方案："></a>附上我的解决方案：</h4><p>前提： 重要！！！</p>
+        <h1 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h1><h2 id="一、Vuex是什么"><a href="#一、Vuex是什么" class="headerlink" title="一、Vuex是什么"></a>一、Vuex是什么</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念:"></a>1.概念:</h3><p>​    专门在Vue中实现集中式状态(数据)管理的一个Vue插件,对vue应用中<br>多个组件的共享状态进行集中式的管理(读/写) ，也是一种组件间通信的方式，且适用于任意组件间通信。</p>
+<h3 id="so？什么是状态管理"><a href="#so？什么是状态管理" class="headerlink" title="so？什么是状态管理"></a>so？什么是状态管理</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">// state</span></span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      count: <span class="number">0</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// view</span></span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">  <span class="comment">// actions</span></span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">increment</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>.count++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这是一个典型的状态自管理的应用，因为该应用的状态由自己管理，一切都在自己的组建里写着</p>
+<p>而我们通常说的状态管理一般指外部管理，即就是：把<strong>状态从组件里面抽离出来，用一个全局可见文件来集中储存管理</strong>（类似于eventBus）</p>
+<p>在Vue中，view上的显示state和state改变后再次被渲染到页面上，这些都是Vue在帮我们完成，那么在action上完成的操作自然可以被分离出来，这样可以随时更改view的实现，而不必担心影响其他</p>
+<p><img src="E:\projects\blog\boke\source\_posts\undefined\Vuex\explain.png" alt="explain"></p>
+<h3 id="2-什么时候使用"><a href="#2-什么时候使用" class="headerlink" title="2.什么时候使用"></a>2.什么时候使用</h3><p>1.多个组件依赖于同一状态&lt;<br>2.来自不同组件的行为需要变更同一状态&lt;</p>
+<p><img src="E:\projects\blog\boke\source\_posts\undefined\Vuex\Vuex.png" alt="Vuex"></p>
+<h2 id="二、核心概念"><a href="#二、核心概念" class="headerlink" title="二、核心概念"></a>二、核心概念</h2><h3 id="1-state"><a href="#1-state" class="headerlink" title="1.state"></a>1.state</h3><p>​    驱动应用的数据源，也就是根据自己项目的要求，自定义的一个数据结构，存放通用的一些状态</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//组件访问方式</span></span><br><span class="line"><span class="comment">//#1</span></span><br><span class="line"><span class="built_in">this</span>.$store.state.全局数据名称</span><br><span class="line"><span class="comment">//#2</span></span><br><span class="line"><span class="comment">//从vuex按需引入mapState函数</span></span><br><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"><span class="comment">//这样可以将当前组件需要的全局数据映射为当前组件的computed计算属性</span></span><br><span class="line">computed:&#123;</span><br><span class="line">	...mapState([<span class="string">&#x27;count&#x27;</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-mutation"><a href="#2-mutation" class="headerlink" title="2.mutation"></a>2.mutation</h3><p>用于变更Store中的数据</p>
 <ul>
-<li>安装好node，配置好node的环境。</li>
-<li>选择一个磁盘，简历一个文件夹，取名为blog（取啥都行，自己知道以后干嘛的就好）</li>
-<li>打开建好的文件夹，按住shift同时鼠标右键，选择powershell选项打开命令提示符，前提准备就算完成啦。</li>
-<li>然后按照下面的指令一步步输入，然后就好啦~</li>
+<li><p>只能通过 mutation 变更 Store 数据，不可以直接操作 Store 中的数据。</p>
+</li>
+<li><p>通过这种方式虽然操作起来稍微繁琐一些，但是可以集中监控所有数据的变化。</p>
+<h4 id="gt-定义mutation"><a href="#gt-定义mutation" class="headerlink" title="&gt; 定义mutation"></a>&gt; 定义mutation</h4><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 定义 Mutation</span><br><span class="line"><span class="keyword">const</span> store = new Vuex.Store(&#123;</span><br><span class="line"><span class="keyword">state</span>: &#123;</span><br><span class="line">count: <span class="number">0</span> </span><br><span class="line">&#125;,</span><br><span class="line">mutations: &#123; add(<span class="keyword">state</span>) &#123; // 变更状态</span><br><span class="line"><span class="keyword">state</span>.count++ &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="gt-触发-mutations-的第一种方式"><a href="#gt-触发-mutations-的第一种方式" class="headerlink" title="&gt; 触发 mutations 的第一种方式"></a>&gt; 触发 mutations 的第一种方式</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 触发mutation methods: &#123;</span></span><br><span class="line"><span class="function"><span class="title">handle1</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="comment">// 触发 mutations 的第一种方式 </span></span><br><span class="line">this.<span class="variable">$store</span><span class="selector-class">.commit</span>(<span class="string">&#x27;add&#x27;</span>)</span><br><span class="line">&#125; &#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<h4 id="gt-触发-mutations-的第二种方式"><a href="#gt-触发-mutations-的第二种方式" class="headerlink" title="&gt; 触发 mutations 的第二种方式:"></a>&gt; 触发 mutations 的第二种方式:</h4><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 从 vuex 中按需导入 mapMutations 函数 </span></span><br><span class="line"><span class="keyword">import</span> &#123; mapMutations &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>通过刚才导入的 mapMutations 函数，将需要的 mutations 函数，映射为当前组件的 methods 方法:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 将指定的 mutations 函数，映射为当前组件的 methods 函数 </span></span><br><span class="line">methods: &#123;</span><br><span class="line">..<span class="selector-class">.mapMutations</span>(<span class="selector-attr">[<span class="string">&#x27;add&#x27;</span>, <span class="string">&#x27;addN&#x27;</span>]</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>  在命令的前面加上npx。</p>
+<h3 id="3-Action"><a href="#3-Action" class="headerlink" title="3.Action"></a>3.Action</h3><p>用于处理异步任务</p>
+<blockquote>
+<p>如果通过异步操作变更数据，必须通过 Action，而不能使用 Mutation，但是在Action 中还是要通过触发 Mutation 的方式间接变更数据。</p>
+<p>定义 Action</p>
+</blockquote>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 定义 Action</span><br><span class="line"><span class="keyword">const</span> store = new Vuex.Store(&#123;</span><br><span class="line">// ...省略其他代码 </span><br><span class="line">mutations: &#123;</span><br><span class="line">add(<span class="keyword">state</span>) &#123; <span class="keyword">state</span>.count++</span><br><span class="line">&#125; &#125;,</span><br><span class="line">actions: &#123; addAsync(context) &#123;</span><br><span class="line"><span class="built_in">set</span>Timeout(() =&gt; &#123; context.commit(&#x27;add&#x27;)</span><br><span class="line">&#125;, <span class="number">1000</span>) &#125;</span><br><span class="line">&#125; &#125;)</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>触发 actions 的第一种方式</p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 触发 Action </span></span><br><span class="line">methods: &#123;</span><br><span class="line"><span class="function"><span class="title">handle</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="comment">// 触发 actions 的第一种方式 </span></span><br><span class="line">this.<span class="variable">$store</span><span class="selector-class">.dispatch</span>(<span class="string">&#x27;addAsync&#x27;</span>)</span><br><span class="line">&#125; &#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>触发 actions 的第二种方式</p>
+</blockquote>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 从 vuex 中按需导入 mapActions 函数 </span></span><br><span class="line"><span class="keyword">import</span> &#123; mapActions &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<p>通过刚才导入的 mapActions 函数，将需要的 actions 函数，映射为当前组件的 methods 方法:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 将指定的 actions 函数，映射为当前组件的 methods 函数 </span></span><br><span class="line">methods: &#123;</span><br><span class="line">..<span class="selector-class">.mapActions</span>(<span class="selector-attr">[<span class="string">&#x27;addASync&#x27;</span>, <span class="string">&#x27;addNASync&#x27;</span>]</span>) &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-getter"><a href="#4-getter" class="headerlink" title="4.getter"></a>4.getter</h3><p>​    类似于vue里面的计算属性，用于对 Store 中的数据进行加工处理形成新的数据。</p>
 <ul>
-<li>npx hexo init blog</li>
-<li>cd blog</li>
-<li>npm install</li>
-<li>npx hexo server</li>
-<li>本地打开<a href="https://link.juejin.cn?target=http%3A%2F%2Flocalhost%3A4000%2F%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E5%95%A6%EF%BC%88%E6%89%93%E5%BC%80%E6%9C%89%E7%82%B9%E5%A5%BD%E7%9C%8B%E5%93%A6%EF%BC%89">http://localhost:4000/就可以看到啦（打开有点好看哦）</a></li>
+<li><p>Getter 可以对 Store 中已有的数据加工处理之后形成新的数据，类似 Vue 的计算属性。</p>
+</li>
+<li><p>Store 中数据发生变化，Getter 的数据也会跟着变化。</p>
+</li>
+<li><blockquote>
+<p>定义 Getter</p>
+</blockquote>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 定义 Getter</span><br><span class="line"><span class="keyword">const</span> store = new Vuex.Store(&#123;</span><br><span class="line">  <span class="keyword">state</span>: &#123;</span><br><span class="line">    count: <span class="number">0</span></span><br><span class="line">&#125;, </span><br><span class="line">getters: &#123;</span><br><span class="line">showNum: <span class="keyword">state</span> =&gt; &#123;</span><br><span class="line">return &#x27;当前最新的数量是【&#x27;+ <span class="keyword">state</span>.count +&#x27;】&#x27;</span><br><span class="line">&#125; &#125;</span><br><span class="line">&#125;)</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 getters 的第一种方式:</p>
+</blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.getters.名称</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 getters 的第二种方式:</p>
+</blockquote>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line">computed: &#123; ...mapGetters([<span class="string">&#x27;showNum&#x27;</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-module"><a href="#5-module" class="headerlink" title="5. module"></a>5. module</h3><p>将store分割成模块,每个模块都有state、mutation、action、getter、甚至嵌套子模块</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> moduleA = &#123;</span><br><span class="line">  <span class="keyword">state</span>: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;,</span><br><span class="line">  getters: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> moduleB = &#123;</span><br><span class="line">  <span class="keyword">state</span>: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = new Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">store.<span class="keyword">state</span>.a // -&gt; moduleA 的状态</span><br><span class="line">store.<span class="keyword">state</span>.b // -&gt; moduleB 的状态</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b358c68850c486e88b60de2b50be2df~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp" alt="使用命令npm install -g hexo-cli 安装Hexo报错bash: hexo: command not found问题解决_hexo-cli "></p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d6ec3f7431f345f3a7565938264cdf08~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp" alt="使用命令npm install -g hexo-cli 安装Hexo报错bash: hexo: command not found问题解决_hexo-cli _02"><br> 最后解释一下，为啥要在前面加上npx。<br> 在大牛阮一峰的网络日志中，他是这么描述的：“npx 想要解决的主要问题，就是调用项目内部安装的模块”，所以可以理解为在命令行下调用，可以让项目内部安装的模块用起来更方便，npx运行的时候，会到node_modules/.bin路径和环境变量$PATH里面，检查命令是否存在，所以系统命令也可以调用，即上面的命令安装不成功的时候加上npx的话也许就可以成功了哦~</p>
+<h2 id="三、搭建Vuex环境"><a href="#三、搭建Vuex环境" class="headerlink" title="三、搭建Vuex环境"></a>三、搭建Vuex环境</h2><p>1.npm i Vuex@3</p>
+<p>注：vue2-vuex@3     vue3-vuex@4</p>
+<p>2.main.js中引入并使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// creat a store insance must before Vue.use(Vuex)</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;./store&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	render h =&gt; h(APP),</span><br><span class="line">	store,</span><br><span class="line">&#125;).$mount(#app)</span><br></pre></td></tr></table></figure>
+<p>3.在src目录下创建store文件夹，创建index.js子文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//该文件用于创建Vuex中最为核心的store</span></span><br><span class="line"><span class="comment">// 引入Vue</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;Vue&#x27;</span><span class="comment">// 目的是因为store实例必须在use</span></span><br><span class="line"><span class="comment">//引入Vuex</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span> </span><br><span class="line"><span class="comment">//准备actions-用于响应组件中的动作</span></span><br><span class="line"><span class="keyword">const</span> actions = &#123;&#125;</span><br><span class="line"><span class="comment">//准备mutations- -用于操作数据(state) </span></span><br><span class="line"><span class="keyword">const</span> mutations = &#123; &#125;</span><br><span class="line"><span class="comment">//准备state-用于存储数据</span></span><br><span class="line"><span class="keyword">const</span> state = &#123;&#125;</span><br><span class="line"><span class="comment">//创建导出store </span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">	actions,</span><br><span class="line">	mutations:mutations,</span><br><span class="line">	state,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>tips</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>  mutations中的函数第一个参数都是<span class="keyword">state</span>,后面只能接收一个参数,如果要传递多个参数,可以使用对象来传递参数,使用时使用解构获取参数</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>  actions中接收参数context代表new出来的new Vuex.Store实例</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>  getters中接收参数<span class="keyword">state</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>  <span class="keyword">state</span>相当于vue中的data,</span><br><span class="line">   mutations相当于vue中的methods,</span><br><span class="line">   actions是异步的methods,</span><br><span class="line">   getters相当于vue中的computed属性</span><br><span class="line">   <span class="keyword">state</span>,getters可以放到vue的计算属性里面</span><br><span class="line">   mutations,actions放在vue的methods中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
         <hr>
@@ -500,12 +543,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/Vue/Vue——组件间通信/" data-toggle="tooltip" data-placement="top" title="Vue——组件间通信">&larr; Previous Post</a>
+            <a href="/undefined/js——事件的冒泡和捕获/" data-toggle="tooltip" data-placement="top" title="js——事件的冒泡和捕获">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/C++/C-的inline关键字的理解/" data-toggle="tooltip" data-placement="top" title="C++的inline关键字的理解">Next Post &rarr;</a>
+            <a href="/Vue/Vue——路由/" data-toggle="tooltip" data-placement="top" title="Vue——路由">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -554,7 +597,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=解决npm install -g hexo-cli报错hexo not found问题&body=Hi,I found this website and thought you might like it https://yummyx02.github.io/hexo/解决npm-install-g-hexo-cli报错hexo-not-found问题/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Vuex&body=Hi,I found this website and thought you might like it https://yummyx02.github.io/undefined/Vuex/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -589,7 +632,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Thu Mar 31 2022 10:35:26 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Thu Mar 31 2022 11:14:03 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -642,7 +685,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E8%A7%A3%E5%86%B3npm-install-g-hexo-cli%E6%8A%A5%E9%94%99hexo-not-found%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">解决npm install -g hexo-cli报错hexo not found问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93%E7%BD%91%E4%B8%8A%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%A7%8D%EF%BC%9A"><span class="toc-nav-number">1.0.0.1.</span> <span class="toc-nav-text">总结网上解决这个错误的方法有以下几种：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%99%84%E4%B8%8A%E6%88%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="toc-nav-number">1.0.0.2.</span> <span class="toc-nav-text">附上我的解决方案：</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Vuex"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Vuex</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81Vuex%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、Vuex是什么</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E6%A6%82%E5%BF%B5"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1.概念:</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#so%EF%BC%9F%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">so？什么是状态管理</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">2.什么时候使用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、核心概念</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-state"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1.state</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-mutation"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2.mutation</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#gt-%E5%AE%9A%E4%B9%89mutation"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">&gt; 定义mutation</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#gt-%E8%A7%A6%E5%8F%91-mutations-%E7%9A%84%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">&gt; 触发 mutations 的第一种方式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#gt-%E8%A7%A6%E5%8F%91-mutations-%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.2.2.3.</span> <span class="toc-nav-text">&gt; 触发 mutations 的第二种方式:</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-Action"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">3.Action</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-getter"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">4.getter</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-module"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">5. module</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81%E6%90%AD%E5%BB%BAVuex%E7%8E%AF%E5%A2%83"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、搭建Vuex环境</span></a></li></ol></li></ol>
         
         </div>
       </aside>
