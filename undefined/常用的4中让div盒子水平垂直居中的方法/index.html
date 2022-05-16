@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://yummyx02.github.io/CSS/什么是外边距重叠？/">
+  <link rel="canonical" href="https://yummyx02.github.io/undefined/常用的4中让div盒子水平垂直居中的方法/">
   <title>
     
-      什么是外边距重叠？ - either strugle | or die
+      常用的4中让div盒子水平垂直居中的方法 - either strugle | or die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -244,9 +244,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
+              ABOUT
               
               
             </a>
@@ -257,9 +257,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -279,9 +279,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/categories/">
               
-              ABOUT
+              CATEGORIES
               
               
             </a>
@@ -391,11 +391,11 @@
               <a class="tag" href="/tags/#css" title="css">css</a>
               
             </div>
-            <h1>什么是外边距重叠？</h1>
+            <h1>常用的4中让div盒子水平垂直居中的方法</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by 王翔_x on
-              2022-05-14
+              2022-05-16
             </span>
 
 
@@ -407,7 +407,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">432</span> In Total
+              Words <span class="post-count">201</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,27 +469,15 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>什么是外边距重叠， 重叠的结果是什么?</h1>
-<h2 id="一、内容">一、内容</h2>
-<p>在CSS当中，相邻的两个盒⼦（可能是兄弟关系也可能是祖先关系）的外边距可以结合成⼀ 个单独的外边距。这种合并外边距的⽅式被称为折叠，并且因⽽所结合成的外边距称为折叠 外边距。</p>
-<p><strong>折叠结果遵循下列计算规则</strong>：</p>
-<p>两个相邻的外边距都是正数时，折叠结果是它们两者之间较⼤的值。</p>
-<p>两个相邻的外边距都是负数时，折叠结果是两者绝对值的较⼤值。</p>
-<p>两个外边距⼀正⼀负时，折叠结果是两者的相加的和。</p>
-<h2 id="那么外边距重叠的作用是什么呢？">那么外边距重叠的作用是什么呢？</h2>
-<p>当我们上下排列一系列规则的块级元素时，那么块元素之间因为外边距重叠的存在，段落之间就不会产生双倍的距离，这样各处距离就一致了。</p>
-<h2 id="三、外边距不重叠的情况。">三、外边距不重叠的情况。</h2>
-<p>水平margin永远不会重合</p>
-<p>设置了overflow属性(visible除外)的元素和它的子元素之间的margin不会重叠</p>
-<p>设置了绝对定位（position:absolute）的盒模型，垂直margin不会被重叠，和子元素之间也不重叠</p>
-<p>设置了display:inline-block的元素，垂直margin不会重叠，和子元素之间也不重叠</p>
-<p>根元素(如html)与body的margin不会重叠</p>
-<h2 id="四、防止外边距重叠的方法。">四、防止外边距重叠的方法。</h2>
-<p>元素绝对定位postion:absolute;一般用在内层元素</p>
-<p>内层元素 加float:left;或display:inline-block;</p>
-<p>外层元素用padding增加边距</p>
-<p>外层元素设置overflow:hidden;</p>
-<p>内层元素透明边框border:1px solid transparent;</p>
+        <h1>常用div水平垂直居中方法（4种）</h1>
+<h2 id="一、使用绝对定位">一、使用绝对定位</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">background</span>: green;</span><br><span class="line">            <span class="attribute">position</span>:absolute;</span><br><span class="line">            <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">margin</span>: auto;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">//适用于确定了宽度和高度的条件</span><br></pre></td></tr></table></figure>
+<h2 id="二、绝对定位-margin负间距">二、绝对定位+margin负间距</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">	<span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">          <span class="attribute">position</span>: absolute;</span><br><span class="line">          <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">          <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">          <span class="attribute">margin-left</span>:-<span class="number">100px</span>;</span><br><span class="line">          <span class="attribute">margin-top</span>:-<span class="number">100px</span>;</span><br><span class="line">//仍然是需要已知盒子的高度和宽度 注意：<span class="attribute">margin</span>和百分比的设置都是针对<span class="attribute">top</span>和<span class="attribute">left</span></span><br></pre></td></tr></table></figure>
+<h2 id="三、Transforms-变形-绝对定位">三、Transforms 变形 绝对定位</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> 			<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line"> 			<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">position</span>:absolute;</span><br><span class="line">            <span class="attribute">left</span>:<span class="number">50%</span>;    <span class="comment">/* 定位父级的50% */</span></span><br><span class="line">            <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">            <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>,-<span class="number">50%</span>); <span class="comment">/*自己的50% */</span></span><br><span class="line">// 仍然是需要已知盒子的高度和宽度</span><br></pre></td></tr></table></figure>
+<h2 id="四、flex实现水平居中（popular-and-simple">四、flex实现水平居中（popular and simple)</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123; // 针对父级元素</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">display</span> :flex;</span><br><span class="line">	<span class="attribute">justify-content</span>:center;</span><br><span class="line">	<span class="attribute">align-items</span>:center;</span><br><span class="line">&#125;</span><br><span class="line">//前提：父级元素必须确定高度</span><br></pre></td></tr></table></figure>
 
 
         <hr>
@@ -497,12 +485,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/CSS/常用使div盒子水平垂直居中的方法（4种）/" data-toggle="tooltip" data-placement="top" title="常用使div盒子水平垂直居中的方法（4种）">&larr; Previous Post</a>
+            <a href="/undefined/什么是外边距重叠/" data-toggle="tooltip" data-placement="top" title="什么是外边距重叠">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/js/js是一门什么样的语言/" data-toggle="tooltip" data-placement="top" title="js是一门什么样的语言">Next Post &rarr;</a>
+            <a href="/undefined/css的transform属性/" data-toggle="tooltip" data-placement="top" title="css的transform属性">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -551,7 +539,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=什么是外边距重叠？&body=Hi,I found this website and thought you might like it https://yummyx02.github.io/CSS/什么是外边距重叠？/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=常用的4中让div盒子水平垂直居中的方法&body=Hi,I found this website and thought you might like it https://yummyx02.github.io/undefined/常用的4中让div盒子水平垂直居中的方法/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -607,7 +595,7 @@
     }
 
     const gitment = new Gitment({
-      id: 'Sat May 14 2022 18:59:07 GMT+0800', // optional
+      id: 'Mon May 16 2022 18:56:52 GMT+0800', // optional
       owner: 'https://github.com/yummyX02',
       repo: 'https://github.com/yummyX02/yummyX02.github.io.git',
       oauth: {
@@ -644,7 +632,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">什么是外边距重叠， 重叠的结果是什么?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E5%86%85%E5%AE%B9"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、内容</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%82%A3%E4%B9%88%E5%A4%96%E8%BE%B9%E8%B7%9D%E9%87%8D%E5%8F%A0%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88%E5%91%A2%EF%BC%9F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">那么外边距重叠的作用是什么呢？</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81%E5%A4%96%E8%BE%B9%E8%B7%9D%E4%B8%8D%E9%87%8D%E5%8F%A0%E7%9A%84%E6%83%85%E5%86%B5%E3%80%82"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、外边距不重叠的情况。</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9B%E3%80%81%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E9%87%8D%E5%8F%A0%E7%9A%84%E6%96%B9%E6%B3%95%E3%80%82"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">四、防止外边距重叠的方法。</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">常用div水平垂直居中方法（4种）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、使用绝对定位</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D-margin%E8%B4%9F%E9%97%B4%E8%B7%9D"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、绝对定位+margin负间距</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81Transforms-%E5%8F%98%E5%BD%A2-%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、Transforms 变形 绝对定位</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9B%E3%80%81flex%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%EF%BC%88popular-and-simple"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">四、flex实现水平居中（popular and simple)</span></a></li></ol></li></ol>
         
         </div>
       </aside>
