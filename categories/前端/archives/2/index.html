@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://yummyx02.github.io/C++/C-lower-bound-and-upper-bound函数一些记录/">
+  <link rel="canonical" href="https://yummyx02.github.io/categories/前端/archives/2/">
   <title>
     
-      C++ lower_bound and upper_bound函数一些记录 - either strugle | or die
+      either strugle | or die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -299,7 +299,29 @@
           <!-- LangSelect -->
           
           
-          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      English
+    </span>
+    <select id="lang-select" data-canonical="categories/前端/archives/2/index.html">
+      
+      
+      <option value="en"  selected >
+        English
+      </option>
+      
+      <option value="cn" >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
           
           
         </ul>
@@ -361,9 +383,9 @@
     }
 
     header.intro-header {
-       /*post*/
-        background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url(''); */
+       /*page*/
+        background-image: var(--intro-header-background-image-url-page);
+        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
       
     }
 
@@ -385,42 +407,10 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="post-heading">
-            <div class="tags">
-              
-              <a class="tag" href="/tags/#C++" title="C++">C++</a>
-              
-            </div>
-            <h1>C++ lower_bound and upper_bound函数一些记录</h1>
-            <h2 class="subheading"></h2>
-            <span class="meta">
-              Posted by 王翔_x on
-              2022-04-03
-            </span>
-
-
-            
-            <!-- WordCount start -->
-            <div class="blank_box"></div>
-            <span class="meta">
-              Estimated Reading Time <span class="post-count">3</span> Minutes
-            </span>
-            <div class="blank_box"></div>
-            <span class="meta">
-              Words <span class="post-count">699</span> In Total
-            </span>
-            <div class="blank_box"></div>
-            <!-- WordCount end -->
-            
-            
-            <!-- 不蒜子统计 start -->
-            <span class="meta" id="busuanzi_container_page_pv">
-              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
-            </span>
-            <!-- 不蒜子统计 end -->
-            
-
-
+          <div class="site-heading">
+            <h1>Struggle in my life</h1>
+            <!--<hr class="small">-->
+            <span class="subheading">王翔的博客</span>
           </div>
           
         </div>
@@ -461,272 +451,707 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Modify by Yu-Hsuan Yen -->
-<!-- Post Content -->
-<article>
-  <div class="container">
-    <div class="row">
-      <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+		<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    
 
-        <h1>C++ 中lower_bound函数</h1>
-<p>该函数内置在#include<algorithm>中，使用了二分查找的思想</p>
-<p><strong>tips：返回的是地址</strong></p>
-<ul>
-<li>
-<p>在由小到大的排序数组中</p>
-<p>lower_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找第一个大于或等于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。</p>
-<p>upper_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找第一个大于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标</p>
-<hr>
-</li>
-<li>
-<p>在由大到小的数组中</p>
-<p>lower_bound( begin,end,num,greater<type>() ):从数组的begin位置到end-1位置二分查找第一个小于或等于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。</p>
-<p>upper_bound( begin,end,num,greater<type>() ):从数组的begin位置到end-1位置二分查找第一个小于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。</p>
-</li>
-</ul>
-<hr>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100000</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">2</span>*<span class="built_in"><span class="keyword">int</span></span>(<span class="number">1e9</span>)+<span class="number">10</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a&gt;b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num[<span class="number">6</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">15</span>,<span class="number">34</span>&#125;; </span><br><span class="line">	<span class="built_in">sort</span>(num,num+<span class="number">6</span>);                           <span class="comment">//按从小到大排序 </span></span><br><span class="line">	<span class="keyword">int</span> pos1=<span class="built_in">lower_bound</span>(num,num+<span class="number">6</span>,<span class="number">7</span>)-num;    <span class="comment">//返回数组中第一个大于或等于被查数的值 </span></span><br><span class="line">	<span class="keyword">int</span> pos2=<span class="built_in">upper_bound</span>(num,num+<span class="number">6</span>,<span class="number">7</span>)-num;    <span class="comment">//返回数组中第一个大于被查数的值</span></span><br><span class="line">	cout&lt;&lt;pos1&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;num[pos1]&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;pos2&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;num[pos2]&lt;&lt;endl;</span><br><span class="line">	<span class="built_in">sort</span>(num,num+<span class="number">6</span>,cmd);                      <span class="comment">//按从大到小排序</span></span><br><span class="line">	<span class="keyword">int</span> pos3=<span class="built_in">lower_bound</span>(num,num+<span class="number">6</span>,<span class="number">7</span>,greater&lt;<span class="keyword">int</span>&gt;())-num;  <span class="comment">//返回数组中第一个小于或等于被查数的值 </span></span><br><span class="line">	<span class="keyword">int</span> pos4=<span class="built_in">upper_bound</span>(num,num+<span class="number">6</span>,<span class="number">7</span>,greater&lt;<span class="keyword">int</span>&gt;())-num;  <span class="comment">//返回数组中第一个小于被查数的值 </span></span><br><span class="line">	cout&lt;&lt;pos3&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;num[pos3]&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;pos4&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;num[pos4]&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-<p>利用重载操作符方法实现</p>
-<p><strong>greater和less是头文件<xfunctional>中定义的两个结构</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">		<span class="comment">// TEMPLATE STRUCT greater</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> _<span class="title">Ty</span>&gt;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">greater</span></span></span><br><span class="line"><span class="class">		:</span> <span class="keyword">public</span> binary_function&lt;_Ty, _Ty, <span class="keyword">bool</span>&gt;</span><br><span class="line">	&#123;	<span class="comment">// functor for operator&gt;</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> _Ty&amp; _Left, <span class="keyword">const</span> _Ty&amp; _Right)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">		</span>&#123;	<span class="comment">// apply operator&gt; to operands</span></span><br><span class="line">		<span class="keyword">return</span> (_Left &gt; _Right);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line"> </span><br><span class="line">		<span class="comment">// TEMPLATE STRUCT less</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> _<span class="title">Ty</span>&gt;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">less</span></span></span><br><span class="line"><span class="class">		:</span> <span class="keyword">public</span> binary_function&lt;_Ty, _Ty, <span class="keyword">bool</span>&gt;</span><br><span class="line">	&#123;	<span class="comment">// functor for operator&lt;</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> _Ty&amp; _Left, <span class="keyword">const</span> _Ty&amp; _Right)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">		</span>&#123;	<span class="comment">// apply operator&lt; to operands</span></span><br><span class="line">		<span class="keyword">return</span> (_Left &lt; _Right);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure>
+    <!-- USE SIDEBAR -->
+    <!-- Post Container -->
+    <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
 
+      <!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <!-- 归档列表 -->
 
-        <hr>
-        <!-- Pager -->
-        <ul class="pager">
+      
+
+      <!-- 归档列表 -->
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
+          <span class="tag-text">2022</span>
+        </span>
+        <ul>
           
-          <li class="previous">
-            <a href="/C++/C-sort函数详解（转载）/" data-toggle="tooltip" data-placement="top" title="C++ sort函数详解（转载）">&larr; Previous Post</a>
+          <li>
+            05-22
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/undefined/js隐式转换详解/" style="color: #0085a1">
+              <span>
+                js隐式转换详解
+                
+                -- undefined
+                
+              </span>
+            </a>
           </li>
           
+          <li>
+            05-16
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/undefined/什么是外边距重叠/" style="color: #0085a1">
+              <span>
+                什么是外边距重叠
+                
+                -- undefined
+                
+              </span>
+            </a>
+          </li>
           
-          <li class="next">
-            <a href="/C++/C-中几乎万能的头文件/" data-toggle="tooltip" data-placement="top" title="C++中几乎万能的头文件">Next Post &rarr;</a>
+          <li>
+            05-16
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/undefined/常用的4中让div盒子水平垂直居中的方法/" style="color: #0085a1">
+              <span>
+                常用的4中让div盒子水平垂直居中的方法
+                
+                -- undefined
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-16
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/undefined/css的transform属性/" style="color: #0085a1">
+              <span>
+                css的transform属性
+                
+                -- undefined
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-16
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/undefined/三种浏览器储存数据的方式/" style="color: #0085a1">
+              <span>
+                三种浏览器储存数据的方式
+                
+                -- undefined
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-15
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/undefined/数组空的-问题，【】-！【】/" style="color: #0085a1">
+              <span>
+                数组空的==问题，【】 == ！【】
+                
+                -- undefined
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-14
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/undefined/链接标签相关/" style="color: #0085a1">
+              <span>
+                链接标签相关
+                
+                -- undefined
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-10
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/js/js是一门什么样的语言/" style="color: #0085a1">
+              <span>
+                js是一门什么样的语言
+                
+                -- js
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-10
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Vue/几种控制结构可视的区别/" style="color: #0085a1">
+              <span>
+                几种控制结构可视的区别
+                
+                -- Vue
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-10
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/HTML/src和herf的区别/" style="color: #0085a1">
+              <span>
+                src和herf的区别
+                
+                -- HTML
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-04
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/js/js-同步和异步/" style="color: #0085a1">
+              <span>
+                js-同步和异步
+                
+                -- js
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            05-04
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/js/js-事件循环/" style="color: #0085a1">
+              <span>
+                js-事件循环
+                
+                -- js
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-15
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C-——三种继承和构造-析构函数/" style="color: #0085a1">
+              <span>
+                C++——三种继承和构造/析构函数
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-11
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/js/用作用域解释一个变量的变化/" style="color: #0085a1">
+              <span>
+                用作用域解释一个变量的变化
+                
+                -- js
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-04
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C-迭代器/" style="color: #0085a1">
+              <span>
+                C++迭代器
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C-sort函数详解（转载）/" style="color: #0085a1">
+              <span>
+                C++ sort函数详解（转载）
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C-lower-bound-and-upper-bound函数一些记录/" style="color: #0085a1">
+              <span>
+                C++ lower_bound and upper_bound函数一些记录
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C-中几乎万能的头文件/" style="color: #0085a1">
+              <span>
+                C++中几乎万能的头文件
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/vs code/vs-code-F5调试中文乱码/" style="color: #0085a1">
+              <span>
+                vs code F5调试中文乱码
+                
+                -- vs code
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C-读取字符串的三种方式/" style="color: #0085a1">
+              <span>
+                C++读取字符串的三种方式
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/静态成员必须初始化吗？/" style="color: #0085a1">
+              <span>
+                静态成员必须初始化吗？
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C＋＋中的this/" style="color: #0085a1">
+              <span>
+                C＋＋中的this
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C＋＋友元函数/" style="color: #0085a1">
+              <span>
+                C＋＋友元函数
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C++反转字符串/" style="color: #0085a1">
+              <span>
+                C++反转字符串
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-01
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C++—class和struct的区别（4月的第一篇博客）/" style="color: #0085a1">
+              <span>
+                C++——class和struct的区别（4月的第一篇博客）
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C++——内存分区模型/" style="color: #0085a1">
+              <span>
+                C++——内存分区模型
+                
+                -- C++
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/js/js——反转字符串/" style="color: #0085a1">
+              <span>
+                js——反转字符串
+                
+                -- js
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/js/js——互动方式/" style="color: #0085a1">
+              <span>
+                js——互动方式
+                
+                -- js
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/js/js中this的使用（转载）/" style="color: #0085a1">
+              <span>
+                js中this的使用（转载）
+                
+                -- js
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/js/js——事件的冒泡和捕获/" style="color: #0085a1">
+              <span>
+                js——事件的冒泡和捕获
+                
+                -- js
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Vue/Vuex/" style="color: #0085a1">
+              <span>
+                Vuex
+                
+                -- Vue
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Vue/Vue——路由/" style="color: #0085a1">
+              <span>
+                Vue——路由
+                
+                -- Vue
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/Vue/Vue——组件间通信/" style="color: #0085a1">
+              <span>
+                Vue——组件间通信
+                
+                -- Vue
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/hexo/解决npm-install-g-hexo-cli报错hexo-not-found问题/" style="color: #0085a1">
+              <span>
+                解决npm install -g hexo-cli报错hexo not found问题
+                
+                -- hexo
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/C++/C-的inline关键字的理解/" style="color: #0085a1">
+              <span>
+                C++的inline关键字的理解
+                
+                -- C++
+                
+              </span>
+            </a>
           </li>
           
         </ul>
-
-        
-        <!-- tip start -->
-        <!-- tip -->
-<!-- tip start -->
-<div class="tip">
-  <p>
-    
-      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
-    
-  </p>
+      </div>
+      
+    </div>
+  </div>
 </div>
-<!-- tip end -->
 
-        <!-- tip end -->
-        
 
-        
-        <!-- Sharing Srtart -->
-        <!-- Social Social Share Post -->
-<!-- Docs:https://github.com/overtrue/share.js -->
+      <!-- 如果开启评论功能 -->
+      
+    </div>
 
-<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
-  <ul class="list-inline text-center social-share-ul">
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-twitter">
-        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a class="social-share-icon icon-wechat">
-        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-weibo">
-        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-qq">
-        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=C++ lower_bound and upper_bound函数一些记录&body=Hi,I found this website and thought you might like it https://yummyx02.github.io/C++/C-lower-bound-and-upper-bound函数一些记录/">
-        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
+    <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Visitors -->
+<h5><a href="/">VISITORS</a></h5>
+
+<div class="widget">
+  <span>
+    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
+  </span>
+  <br />
+  <span>
+    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
+  </span>
+</div>
+
+
+        <hr>
+    
+        <!-- Featured Tags -->
+
+<section>
+  <h5><a href="/tags/">FEATURED TAGS</a></h5>
+  <div class="tags">
+    
+    
+    <a href="/tags/#html" title="html" rel="2">html</a>
+    
+    
+    
+    <a href="/tags/#js" title="js" rel="10">js</a>
+    
+    
+    
+    <a href="/tags/#css" title="css" rel="3">css</a>
+    
+    
+    
+    <a href="/tags/#计算机网络" title="计算机网络" rel="1">计算机网络</a>
+    
+    
+    
+    <a href="/tags/#hexo" title="hexo" rel="1">hexo</a>
+    
+    
+    
+    <a href="/tags/#Vue" title="Vue" rel="3">Vue</a>
+    
+    
+    
+    <a href="/tags/#C++" title="C++" rel="13">C++</a>
+    
+    
+    
+    <a href="/tags/#vs code" title="vs code" rel="1">vs code</a>
+    
+    
+  </div>
+</section>
+
+
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+  <h5><a href="/about/">ABOUT ME</a></h5>
+  <div class="short-about">
+
+    
+    <img id="avatar_pic" src="/img/avatar/slide.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
+    
+
+    
+    <p>lazy people have no future, either struggle or die...</p>
+    
+
+    <!-- SNS Link -->
+    <ul class="list-inline">
+      
+
+      
+      <li>
+        <a target="_blank" href="https://github.com/yummyX02">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+      <li>
+        <a target="_blank" href="http://weibo.com/梦GluTtoNy">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      
+
+    </ul>
+  </div>
+</section>
+
+        <hr>
+    
+        <!-- RECENT POSTS -->
+
+<h5><a href="/">RECENT POSTS</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="../../../../undefined/js%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E8%AF%A6%E8%A7%A3/">
+      <li>js隐式转换详解</li>
+    </a>
+    
+    <a href="../../../../undefined/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%96%E8%BE%B9%E8%B7%9D%E9%87%8D%E5%8F%A0/">
+      <li>什么是外边距重叠</li>
+    </a>
+    
+    <a href="../../../../undefined/%E5%B8%B8%E7%94%A8%E7%9A%844%E4%B8%AD%E8%AE%A9div%E7%9B%92%E5%AD%90%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/">
+      <li>常用的4中让div盒子水平垂直居中的方法</li>
+    </a>
+    
+    <a href="../../../../undefined/css%E7%9A%84transform%E5%B1%9E%E6%80%A7/">
+      <li>css的transform属性</li>
+    </a>
+    
+    <a href="../../../../undefined/%E4%B8%89%E7%A7%8D%E6%B5%8F%E8%A7%88%E5%99%A8%E5%82%A8%E5%AD%98%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F/">
+      <li>三种浏览器储存数据的方式</li>
+    </a>
+    
   </ul>
 </div>
 
-<!-- css & js -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
-<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-        <!-- Sharing End -->
-        
         <hr>
-
-        <!-- comments start -->
-        <!-- 1. gitalk comment -->
-
-
-<!-- 2. gitment comment -->
-
-  <!-- gitment start -->
-  <!-- Docs:https://github.com/imsun/gitment -->
-
-  <div id="blog_comments"></div>
-  <!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"> <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
-
-  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
-
-  <script>
-    const myTheme = {
-      render(state, instance) {
-        const container = document.createElement('div')
-        container.lang = "en-US"
-        container.className = 'gitment-container gitment-root-container'
-
-        // your custom component
-        container.appendChild(instance.renderSomething(state, instance))
-        container.appendChild(instance.renderHeader(state, instance))
-        container.appendChild(instance.renderEditor(state, instance))
-        container.appendChild(instance.renderComments(state, instance))
-        container.appendChild(instance.renderFooter(state, instance))
-        return container
-      },
-      renderSomething(state, instance) {
-        const container = document.createElement('div')
-        container.lang = "en-US"
-        container.className = 'hello_visitor'
-        if (state.user.login) {
-          container.innerText = `Hello ${state.user.login}, Welcome to comment system`
-        }
-        return container
-      }
-    }
-
-    const gitment = new Gitment({
-      id: 'Sun Apr 03 2022 18:23:56 GMT+0800', // optional
-      owner: 'https://github.com/yummyX02',
-      repo: 'https://github.com/yummyX02/yummyX02.github.io.git',
-      oauth: {
-        client_id: 'yummyX02',
-        client_secret: ''
-      },
-      desc: '',
-      perPage: '10',
-      maxCommentHeight: '250',
-      theme: myTheme,
-      // ... For more available options, check out the documentation below
-    })
-
-    gitment.render('blog_comments')
-    // or gitment.render(document.getElementById('comments')) or document.body.appendChild(gitment.render())
-  </script>
-
-  <!-- gitment end -->
-
-
-<!-- 3. disqus comment -->
-
-
-        <!-- comments end -->
-        <hr>
-
-      </div>
-
-      <!-- Catalog: Tabe of Content -->
-      <!-- Table of Contents -->
-
     
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
-        
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++ 中lower_bound函数</span></a></li></ol>
-        
-        </div>
-      </aside>
-    
-
-
-
-      <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-        <!-- Featured Tags -->
-        
-        <section>
-          <!-- no hr -->
-          <h5>
-            <a href="/tags/">FEATURED TAGS</a>
-          </h5>
-          <div class="tags">
-            
-            <a class="tag" href="/tags/#C++" title="C++">C++</a>
-            
-          </div>
-        </section>
-        
-
         <!-- Friends Blog -->
-        
-      </div>
-    </div>
+
+
+        <hr>
+    
+        <!-- Archives -->
+
+<h5><a href="/archives/">archives</a></h5>
+<div class="widget">
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2022/05/">May 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2022/04/">April 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2022/03/">March 2022</a><span class="archive-list-count">10</span></li></ul>
+</div>
+
+
+        <hr>
+    
+        <!-- Categories -->
+
+<h5><a href="/categories/">categories</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="/categories/#前端">
+      <li>前端</li>
+    </a>
+    
+    <a href="/categories/#计算机基础">
+      <li>计算机基础</li>
+    </a>
+    
+    <a href="/categories/#C++">
+      <li>C++</li>
+    </a>
+    
+  </ul>
+</div>
+
+
+        <hr>
+    
+</div>
+
+
+    
   </div>
-</article>
-
-
-
-<!-- anchorjs start -->
-<!-- async load function -->
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script type="text/javascript">
-  // async load function
-  function async (u, c) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) {
-      o.addEventListener('load', function(e) {
-        c(null, e);
-      }, false);
-    }
-    s.parentNode.insertBefore(o, s);
-  };
-</script>
-<script type="text/javascript">
-  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
-  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
-    anchors.options = {
-      visible: 'hover',
-      placement: 'left',
-      // icon: 'ℬ'
-      icon: '❡'
-    };
-    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-  });
-</script>
-<style>
-  /* place left on bigger screen */
-  @media all and (min-width: 800px) {
-    .anchorjs-link {
-      position: absolute;
-      left: -0.75em;
-      font-size: 1.1em;
-      margin-top: -0.1em;
-    }
-  }
-</style>
-
-<!-- anchorjs end -->
-
+</div>
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
