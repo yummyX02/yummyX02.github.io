@@ -243,6 +243,17 @@
 
           
           
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
@@ -260,17 +271,6 @@
             <a href="/tags/">
               
               TAGS
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -469,20 +469,16 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>C++——继承</h1>
-<h2 id="1）基类成员对派生类的可见性">1）基类成员对派生类的可见性</h2>
-<ol>
-<li>
-<p>公有继承(public) ：基类的公有成员和保护成员作为派生类的成员时，它们都保持原有的状态，而基类的私有成员仍然是私有的，不能被这个派生类的子类所访问。</p>
-</li>
-<li>
-<p>私有继承(private) ：基类的公有成员和保护成员都作为派生类的私有成员，并且不能被这个派生类的子类所访问。</p>
-</li>
-<li>
-<p>保护继承(protected) ：基类的所有公有成员和保护成员都成为派生类的保护成员，并且只能被它的派生类成员函数或友元访问，基类的私有成员仍然是私有的。</p>
-</li>
+        <h1 id="C-——继承"><a href="#C-——继承" class="headerlink" title="C++——继承"></a>C++——继承</h1><h2 id="1）基类成员对派生类的可见性"><a href="#1）基类成员对派生类的可见性" class="headerlink" title="1）基类成员对派生类的可见性"></a>1）基类成员对派生类的可见性</h2><ol>
+<li>公有继承(public) ：基类的公有成员和保护成员作为派生类的成员时，它们都保持原有的状态，而基类的私有成员仍然是私有的，不能被这个派生类的子类所访问。</li>
 </ol>
-<p>下面列出三种不同的继承方式的基类特性和派生类特性。</p>
+<ol>
+<li>私有继承(private) ：基类的公有成员和保护成员都作为派生类的私有成员，并且不能被这个派生类的子类所访问。</li>
+</ol>
+<ol>
+<li>保护继承(protected) ：基类的所有公有成员和保护成员都成为派生类的保护成员，并且只能被它的派生类成员函数或友元访问，基类的私有成员仍然是私有的。</li>
+</ol>
+<p>下面列出三种不同的继承方式的基类特性和派生类特性。　　</p>
 <pre><code>表一：基类成员对派生类的可见性                                        public    protected     private
 
 公有继承        可见       可见     不可见    
@@ -490,31 +486,23 @@
 私有继承        可见       可见     不可见     
 
 保护继承        可见       可见     不可见
-</code></pre>
-<p>2）基类成员对派生类对象的可见性</p>
-<pre><code>表二：基类成员对派生类对象的可见性                         				public    protected     private
+</code></pre><p> 2）基类成员对派生类对象的可见性</p>
+<pre><code>表二：基类成员对派生类对象的可见性                                         public    protected     private
 公有继承       可见      不可见     不可见                                                                                     
 私有继承      不可见      不可见     不可见                                                                          
 保护继承      不可见      不可见     不可见                                 
-</code></pre>
-<p>在公有继承时，派生类的对象可以访问基类中的公有成员；派生类的成员函数可以访问基类中的公有成员和保护成员。</p>
+</code></pre><p>在公有继承时，派生类的对象可以访问基类中的公有成员；派生类的成员函数可以访问基类中的公有成员和保护成员。</p>
 <p>在私有继承时，基类的成员只能由直接派生类访问，而无法再往下继承。</p>
 <p>上述所说的可见性也就是可访问性。称派生类的对象对基类访问为水平访问，称派生类的派生类对基类的访问为垂直访问。</p>
 <blockquote>
 <p>公有继承时，水平访问和垂直访问对基类中的公有成员不受限制；</p>
-</blockquote>
-<blockquote>
 <p>私有继承时，水平访问和垂直访问对基类中的公有成员也不能访问；</p>
-</blockquote>
-<blockquote>
 <p>保护继承时，对于垂直访问同于公有继承，对于水平访问同于私有继承。</p>
 </blockquote>
 <p>基类中的私有成员，只能被基类中的成员函数和友元函数所访问，不能被其他的函数访问。</p>
 <p>公有继承、私有继承和保护继承都可以通过函数访问父类的保护变量，但不可以访问父类的私有变量。</p>
 <p><strong>无论采用什么派生的方式，派生类中都不能访问基类的私有成员</strong></p>
-<h2 id="（2）虚基类的继承（virtual）">（2）虚基类的继承（virtual）</h2>
-<h3 id="为何存在？">为何存在？</h3>
-<p>为了解决在多继承的环境下产生的二义性问题，即：访问某个数据，但是编译器不知道到底该访问哪个</p>
+<h2 id="（2）虚基类的继承（virtual）"><a href="#（2）虚基类的继承（virtual）" class="headerlink" title="（2）虚基类的继承（virtual）"></a>（2）虚基类的继承（virtual）</h2><h3 id="为何存在？"><a href="#为何存在？" class="headerlink" title="为何存在？"></a>为何存在？</h3><p>为了解决在多继承的环境下产生的二义性问题，即：访问某个数据，但是编译器不知道到底该访问哪个</p>
 <p>eg:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span>&#123;</span></span><br><span class="line">    Public:</span><br><span class="line">    	<span class="built_in">Base</span>()&#123;</span><br><span class="line">        	age = <span class="number">17</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base1</span> :</span>Public Base &#123;</span><br><span class="line">	<span class="keyword">int</span> age1</span><br><span class="line">   Public:</span><br><span class="line">    <span class="built_in">Base1</span>()&#123;</span><br><span class="line">        age1 = <span class="number">19</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base2</span> :</span> Public Base&#123;</span><br><span class="line">	<span class="keyword">int</span> age2</span><br><span class="line">   Public:</span><br><span class="line">    <span class="built_in">Base2</span>()&#123;</span><br><span class="line">        age2 = <span class="number">20</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> :</span>Public Base1,Public Base2&#123;</span><br><span class="line">    Public:</span><br><span class="line">    	<span class="built_in">Son</span>()&#123;</span><br><span class="line">            age3 = <span class="number">18</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">int</span> age3;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Son s;</span><br><span class="line">    s.age = <span class="number">16</span>;<span class="comment">//报错：Base1 and Base2 都有age这个数据</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>解决办法</p>
@@ -530,7 +518,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base1</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">int</span> data1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Base1</span>(<span class="keyword">int</span> a = <span class="number">8</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        data1 = a;</span><br><span class="line">        cout &lt;&lt; data1 &lt;&lt; <span class="string">&quot;, Base Constructor1\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">Base1</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; data1 &lt;&lt; <span class="string">&quot;, Base Destructor1\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base2</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">int</span> data2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Base2</span>(<span class="keyword">int</span> a = <span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        data2 = a;</span><br><span class="line">        cout &lt;&lt; data2 &lt;&lt; <span class="string">&quot;, Base Constructor2\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">Base2</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; data2 &lt;&lt; <span class="string">&quot;, Base Destructor2\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Derived</span> :</span> <span class="keyword">public</span> Base1, <span class="keyword">public</span> Base2</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> d;</span><br><span class="line">    Base1 b1, b2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Derived</span>(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z) : <span class="built_in">Base1</span>(x), <span class="built_in">Base2</span>(y), <span class="built_in">b1</span>(x + y), <span class="built_in">b2</span>(x + z)</span><br><span class="line">    &#123;</span><br><span class="line">        d = z;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Derived Constructor\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">Derived</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Derived Destructor\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; data1 &lt;&lt; <span class="string">&#x27;,&#x27;</span> &lt;&lt; data2 &lt;&lt; <span class="string">&#x27;,&#x27;</span> &lt;&lt; d &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>构造函数的调用顺序：</p>
 <p><strong>1.</strong> <strong>构造函数的调用次序</strong></p>
-<p>在创建一个派生类的对象时</p>
+<p> 在创建一个派生类的对象时</p>
 <p>先调用其基类的构造函数</p>
 <p>再调用本类对象成员的构造函数</p>
 <p>最后才调用本类的构造函数</p>
@@ -693,7 +681,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++——继承</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1%EF%BC%89%E5%9F%BA%E7%B1%BB%E6%88%90%E5%91%98%E5%AF%B9%E6%B4%BE%E7%94%9F%E7%B1%BB%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1）基类成员对派生类的可见性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%EF%BC%882%EF%BC%89%E8%99%9A%E5%9F%BA%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%88virtual%EF%BC%89"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">（2）虚基类的继承（virtual）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BD%95%E5%AD%98%E5%9C%A8%EF%BC%9F"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">为何存在？</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#C-%E2%80%94%E2%80%94%E7%BB%A7%E6%89%BF"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++——继承</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1%EF%BC%89%E5%9F%BA%E7%B1%BB%E6%88%90%E5%91%98%E5%AF%B9%E6%B4%BE%E7%94%9F%E7%B1%BB%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1）基类成员对派生类的可见性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%EF%BC%882%EF%BC%89%E8%99%9A%E5%9F%BA%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%88virtual%EF%BC%89"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">（2）虚基类的继承（virtual）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BD%95%E5%AD%98%E5%9C%A8%EF%BC%9F"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">为何存在？</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>

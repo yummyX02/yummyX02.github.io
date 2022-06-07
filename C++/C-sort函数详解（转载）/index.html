@@ -243,6 +243,17 @@
 
           
           
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
@@ -260,17 +271,6 @@
             <a href="/tags/">
               
               TAGS
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -469,46 +469,38 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>C++sort函数详解</h1>
-<h2 id="1-sort">1.sort</h2>
-<p>使用：#include <algorithm></p>
-<p>using namespace std;</p>
+        <h1 id="C-sort函数详解"><a href="#C-sort函数详解" class="headerlink" title="C++sort函数详解"></a>C++sort函数详解</h1><h2 id="1-sort"><a href="#1-sort" class="headerlink" title="1.sort"></a>1.sort</h2><p>使用：#include <algorithm></p>
+<p>　　  using namespace std;</p>
 <p>作用：排序</p>
 <p>时间复杂度：<strong>n*lg(n)</strong></p>
 <p>实现原理：sort并不是简单的<strong>快速排序</strong>，它对普通的快速排序进行了优化，此外，它还结合了<strong>插入排序</strong>和<strong>推排序</strong>。系统会根据你的数据形式和数据量自动选择合适的排序方法，这并不是说它每次排序只选择一种方法，它是在一次完整排序中不同的情况选用不同方法，比如给一个数据量较大的数组排序，开始采用快速排序，分段递归，分段之后每一段的数据量达到一个较小值后它就不继续往下递归，而是选择插入排序，如果递归的太深，他会选择推排序。</p>
 <p>具体函数实现，请参考：<a target="_blank" rel="noopener" href="http://www.cnblogs.com/fengcc/p/5256337.html">http://www.cnblogs.com/fengcc/p/5256337.html</a></p>
-<h2 id="2-sort简介">2.sort简介</h2>
-<p>函数声明：</p>
-<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码">](javascript:void(0);)</p>
+<h2 id="2-sort简介"><a href="#2-sort简介" class="headerlink" title="2.sort简介"></a>2.sort简介</h2><p>函数声明：</p>
+<p><a href="javascript:void(0"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;algorithm&gt;</span></span><br><span class="line"> </span><br><span class="line">template&lt; <span class="built_in">class</span> RandomIt &gt;</span><br><span class="line">void sort( RandomIt <span class="keyword">first</span>, RandomIt <span class="keyword">last</span> );</span><br><span class="line"> </span><br><span class="line">template&lt; <span class="built_in">class</span> RandomIt, <span class="built_in">class</span> Compare &gt;</span><br><span class="line">void sort( RandomIt <span class="keyword">first</span>, RandomIt <span class="keyword">last</span>, Compare comp );</span><br></pre></td></tr></table></figure>
-<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码">](javascript:void(0);)</p>
+<p><a href="javascript:void(0"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
 <p>形式：sort(first_pointer,first_pointer+n,cmp)</p>
 <p>参数解释： 第一个参数是数组的首地址，一般写上数组名就可以，因为数组名是一个指针常量。第二个参数相对较好理解，即首地址加上数组的长度n（代表尾地址的下一地址）。最后一个参数是比较函数的名称（自定义函数cmp），这个比较函数可以不写，即第三个参数可以缺省，这样sort会默认按数组<strong>升序排序</strong>。</p>
 <p>简单例子：对数组A的0~n-1元素进行升序排序，只要写sort(A,A+n)即可；对于向量V也一样，sort(v.begin(),v.end())即可。</p>
-<h2 id="3-sort扩展">3.sort扩展</h2>
-<p>sort不只是能像上面那样简单的使用，我们可以对sort进行扩展，关键就在于第三个参数&lt;cmp比较函数&gt;，我们想降序排列，或者说我不是一个简简单单的数组，而是结构体、类怎么办，下面给出一些方法和例子。</p>
-<h3 id="方法一：定义比较函数（最常用）"><strong>方法一：定义比较函数（最常用）</strong></h3>
-<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码">](javascript:void(0);)</p>
+<h2 id="3-sort扩展"><a href="#3-sort扩展" class="headerlink" title="3.sort扩展"></a>3.sort扩展</h2><p>sort不只是能像上面那样简单的使用，我们可以对sort进行扩展，关键就在于第三个参数<cmp比较函数>，我们想降序排列，或者说我不是一个简简单单的数组，而是结构体、类怎么办，下面给出一些方法和例子。</p>
+<h3 id="方法一：定义比较函数（最常用）"><a href="#方法一：定义比较函数（最常用）" class="headerlink" title="方法一：定义比较函数（最常用）"></a><strong>方法一：定义比较函数（最常用）</strong></h3><p><a href="javascript:void(0"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//情况一：数组排列</span></span><br><span class="line"><span class="selector-tag">int</span> <span class="selector-tag">A</span><span class="selector-attr">[100]</span>;</span><br><span class="line"><span class="selector-tag">bool</span> <span class="selector-tag">cmp1</span>(int a,int b)<span class="comment">//int为数组数据类型</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="selector-tag">return</span> <span class="selector-tag">a</span>&gt;<span class="selector-tag">b</span>;<span class="comment">//降序排列</span></span><br><span class="line">    <span class="comment">//return a&lt;b;//默认的升序排列</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">sort</span>(A,A+<span class="number">100</span>,cmp1);</span><br><span class="line"></span><br><span class="line"><span class="comment">//情况二：结构体排序</span></span><br><span class="line"><span class="selector-tag">Student</span> <span class="selector-tag">Stu</span><span class="selector-attr">[100]</span>;</span><br><span class="line"><span class="selector-tag">bool</span> <span class="selector-tag">cmp2</span>(Student a,Student b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="selector-tag">return</span> <span class="selector-tag">a</span><span class="selector-class">.id</span>&gt;<span class="selector-tag">b</span><span class="selector-class">.id</span>;<span class="comment">//按照学号降序排列</span></span><br><span class="line">    <span class="comment">//return a.id&lt;b.id;//按照学号升序排列</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">sort</span>(Stu,Stu+<span class="number">100</span>,cmp2);</span><br></pre></td></tr></table></figure>
-<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码">](javascript:void(0);)</p>
+<p><a href="javascript:void(0"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
 <p>注：比较方法也可以放在结构体中或类中定义。</p>
-<h3 id="方法二：使用标准库函数"><strong>方法二：使用标准库函数</strong></h3>
-<p>另外，其实我们还可以再懒一点，在标准库中已经有现成的。它在哪呢？答案是functional，我们include进来试试看。functional提供了一堆基于模板的比较函数对象，它们是：equal_to<Type>、not_equal_to<Type>、greater<Type>、greater_equal<Type>、less<Type>、less_equal<Type>。这些东西的用法看名字就知道了。在这里，我么sort要用到的也只是greater和less就足够了，用法如下：</p>
+<h3 id="方法二：使用标准库函数"><a href="#方法二：使用标准库函数" class="headerlink" title="方法二：使用标准库函数"></a><strong>方法二：使用标准库函数</strong></h3><p>另外，其实我们还可以再懒一点，在标准库中已经有现成的。它在哪呢？答案是functional，我们include进来试试看。functional提供了一堆基于模板的比较函数对象，它们是：equal_to<Type>、not_equal_to<Type>、greater<Type>、greater_equal<Type>、less<Type>、less_equal<Type>。这些东西的用法看名字就知道了。在这里，我么sort要用到的也只是greater和less就足够了，用法如下：</p>
 <ul>
 <li>升序：sort(begin,end,less<data-type>())</li>
 <li>降序：sort(begin,end,greater<data-type>())</li>
 </ul>
 <p>缺点：也只是实现简单的排序，结构体不适用。</p>
-<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码">](javascript:void(0);)</p>
+<p><a href="javascript:void(0"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//简单使用方法</span></span><br><span class="line"><span class="built_in">sort</span>(A,A+<span class="number">100</span>,greater&lt;<span class="keyword">int</span>&gt;());<span class="comment">//降序排列</span></span><br><span class="line"><span class="built_in">sort</span>(A,A+<span class="number">100</span>,less&lt;<span class="keyword">int</span>&gt;());<span class="comment">//升序排列</span></span><br></pre></td></tr></table></figure>
-<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码">](javascript:void(0);)</p>
-<h3 id="方法三：重载结构体或类的比较运算符"><strong>方法三：重载结构体或类的比较运算符</strong></h3>
-<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码">](javascript:void(0);)</p>
+<p><a href="javascript:void(0"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<h3 id="方法三：重载结构体或类的比较运算符"><a href="#方法三：重载结构体或类的比较运算符" class="headerlink" title="方法三：重载结构体或类的比较运算符"></a><strong>方法三：重载结构体或类的比较运算符</strong></h3><p><a href="javascript:void(0"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//情况一：在结构体内部重载</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Student</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    string name;</span><br><span class="line">    <span class="keyword">double</span> grade;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Student&amp; s)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> id&gt;s.id;<span class="comment">//降序排列</span></span><br><span class="line">        <span class="comment">//return id&lt;s.id;//升序排列</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;Student&gt; V;</span><br><span class="line"><span class="built_in">sort</span>(V.<span class="built_in">begin</span>(),V.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">//情况二：在外部重载</span></span><br><span class="line">vector&lt;Student&gt; V;</span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Student&amp; s1, <span class="keyword">const</span> Student&amp; s2)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> s1.id&gt;s2.id;<span class="comment">//降序排列</span></span><br><span class="line">    <span class="comment">//return s1.id&lt;s2.id;//升序排列</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">sort</span>(V.<span class="built_in">begin</span>(),V.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码">](javascript:void(0);)</p>
+<p><a href="javascript:void(0"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
 <p>注意：一定要重载&lt;运算符，因为系统默认是降序，用的是&lt;运算符。</p>
-<h3 id="方法四：声明比较类（少用）"><strong>方法四：声明比较类（少用）</strong></h3>
-<p>[<img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码">](javascript:void(0);)</p>
+<h3 id="方法四：声明比较类（少用）"><a href="#方法四：声明比较类（少用）" class="headerlink" title="方法四：声明比较类（少用）"></a><strong>方法四：声明比较类（少用）</strong></h3><p><a href="javascript:void(0"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Less</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> Student&amp; s1, <span class="keyword">const</span> Student&amp; s2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> s1.id&lt;s2.id; <span class="comment">//升序排列</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">sort</span>(sutVector.<span class="built_in">begin</span>(),stuVector.<span class="built_in">end</span>(),<span class="built_in">Less</span>());</span><br></pre></td></tr></table></figure>
 <p>作者： <a target="_blank" rel="noopener" href="http://www.cnblogs.com/AlvinZH/">AlvinZH</a></p>
 <p>出处： <a target="_blank" rel="noopener" href="http://www.cnblogs.com/AlvinZH/">http://www.cnblogs.com/AlvinZH/</a></p>
@@ -666,7 +658,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++sort函数详解</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-sort"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.sort</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-sort%E7%AE%80%E4%BB%8B"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2.sort简介</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-sort%E6%89%A9%E5%B1%95"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3.sort扩展</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%AE%9A%E4%B9%89%E6%AF%94%E8%BE%83%E5%87%BD%E6%95%B0%EF%BC%88%E6%9C%80%E5%B8%B8%E7%94%A8%EF%BC%89"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">方法一：定义比较函数（最常用）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%A0%87%E5%87%86%E5%BA%93%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">方法二：使用标准库函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9A%E9%87%8D%E8%BD%BD%E7%BB%93%E6%9E%84%E4%BD%93%E6%88%96%E7%B1%BB%E7%9A%84%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">方法三：重载结构体或类的比较运算符</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95%E5%9B%9B%EF%BC%9A%E5%A3%B0%E6%98%8E%E6%AF%94%E8%BE%83%E7%B1%BB%EF%BC%88%E5%B0%91%E7%94%A8%EF%BC%89"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">方法四：声明比较类（少用）</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#C-sort%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++sort函数详解</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-sort"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.sort</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-sort%E7%AE%80%E4%BB%8B"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2.sort简介</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-sort%E6%89%A9%E5%B1%95"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3.sort扩展</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%AE%9A%E4%B9%89%E6%AF%94%E8%BE%83%E5%87%BD%E6%95%B0%EF%BC%88%E6%9C%80%E5%B8%B8%E7%94%A8%EF%BC%89"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">方法一：定义比较函数（最常用）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%A0%87%E5%87%86%E5%BA%93%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">方法二：使用标准库函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9A%E9%87%8D%E8%BD%BD%E7%BB%93%E6%9E%84%E4%BD%93%E6%88%96%E7%B1%BB%E7%9A%84%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">方法三：重载结构体或类的比较运算符</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95%E5%9B%9B%EF%BC%9A%E5%A3%B0%E6%98%8E%E6%AF%94%E8%BE%83%E7%B1%BB%EF%BC%88%E5%B0%91%E7%94%A8%EF%BC%89"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">方法四：声明比较类（少用）</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>

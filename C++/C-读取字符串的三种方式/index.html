@@ -243,6 +243,17 @@
 
           
           
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
@@ -260,17 +271,6 @@
             <a href="/tags/">
               
               TAGS
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -407,7 +407,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">523</span> In Total
+              Words <span class="post-count">516</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,30 +469,23 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>C++读取字符串的三种方式</h1>
-<h2 id="一、cin">一、cin</h2>
-<p>tips：<strong>cin遇到&quot;空格&quot; “TAB” &quot;回车&quot;就会结束读取</strong></p>
+        <h1 id="C-读取字符串的三种方式"><a href="#C-读取字符串的三种方式" class="headerlink" title="C++读取字符串的三种方式"></a>C++读取字符串的三种方式</h1><h2 id="一、cin"><a href="#一、cin" class="headerlink" title="一、cin"></a>一、cin</h2><p>tips：<strong>cin遇到”空格” “TAB” “回车”就会结束读取</strong></p>
 <hr>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">20</span>];</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输入：qwertyu</span></span><br><span class="line"><span class="comment">//输出：qwertyu</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	输入：qwer tyu</span></span><br><span class="line"><span class="comment">	输出：qwer</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h2 id="二、cin-getline">二、cin.getline()</h2>
-<p>tips:<strong>可以接收&quot;空格&quot;的读入并输出</strong></p>
+<h2 id="二、cin-getline"><a href="#二、cin-getline" class="headerlink" title="二、cin.getline()"></a>二、cin.getline()</h2><p>tips:<strong>可以接收”空格”的读入并输出</strong></p>
 <hr>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostram&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[<span class="number">20</span>];</span><br><span class="line">    <span class="built_in">cin</span>.getline(s,<span class="number">5</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">输入：qwer tyu</span></span><br><span class="line"><span class="comment">输出：qwer tyu</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>cin.getline()实际上有三个引数，cin.getline(接收字串的变量,接收个数,结束字元)</li>
 <li>当第三个引数省略时，系统预设为’\0′</li>
-<li>如果将例子中cin.getline()改为cin.getline(m,5,‘a’);当输入jlkjkljkl时输出jlkj，输入jkaljkljkl时，输出jk</li>
+<li>如果将例子中cin.getline()改为cin.getline(m,5,’a’);当输入jlkjkljkl时输出jlkj，输入jkaljkljkl时，输出jk</li>
 </ul>
-<h2 id="三、getline">三、getline()</h2>
-<p>tips:<strong>接收一个字串，可以接收空格并输出，需包含“#include<string>”</strong></p>
+<h2 id="三、getline"><a href="#三、getline" class="headerlink" title="三、getline()"></a>三、getline()</h2><p>tips:<strong>接收一个字串，可以接收空格并输出，需包含“#include<string>”</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string str;</span><br><span class="line">    <span class="built_in">getline</span>(cin,str);</span><br><span class="line">    cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">输入：jkljkljkl</span></span><br><span class="line"><span class="comment">输出：jkljkljkl</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">输入：jkl jfksldfj jklsjfl</span></span><br><span class="line"><span class="comment">输出：jkl jfksldfj jklsjfl</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h4 id="几点提示："><strong>几点提示：</strong></h4>
-<ul>
-<li>
-<p>cin.getline()属于istream流，而getline()属于string流，是不一样的两个函式</p>
+<h4 id="几点提示："><a href="#几点提示：" class="headerlink" title="几点提示："></a><strong>几点提示：</strong></h4><ul>
+<li><p>cin.getline()属于istream流，而getline()属于string流，是不一样的两个函式</p>
 </li>
-<li>
-<p>当同时使用cin和getline()时，需要注意的是，在cin输入流完成之后，getline()之前，需要通过</p>
+<li><p>当同时使用cin和getline()时，需要注意的是，在cin输入流完成之后，getline()之前，需要通过</p>
 <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>=”\n”;</span><br><span class="line">getline(cin,<span class="built_in">str</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -652,7 +645,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++读取字符串的三种方式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81cin"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、cin</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81cin-getline"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、cin.getline()</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81getline"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、getline()</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%87%A0%E7%82%B9%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-nav-number">1.3.0.1.</span> <span class="toc-nav-text">几点提示：</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#C-%E8%AF%BB%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++读取字符串的三种方式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81cin"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、cin</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81cin-getline"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、cin.getline()</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81getline"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、getline()</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%87%A0%E7%82%B9%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-nav-number">1.3.0.1.</span> <span class="toc-nav-text">几点提示：</span></a></li></ol></li></ol></li></ol></li></ol>
         
         </div>
       </aside>

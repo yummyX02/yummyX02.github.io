@@ -243,6 +243,17 @@
 
           
           
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
@@ -260,17 +271,6 @@
             <a href="/tags/">
               
               TAGS
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -469,27 +469,21 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>js—事件循环（宏、微任务）</h1>
-<h2 id="一、事件循环的出现">一、事件循环的出现</h2>
-<p><strong>请注意：在js中，所有的异步任务都是放到事件循环队列中等待执行栈来调用，没有单独的线程</strong></p>
-<p>众所周知，js是单线程语言，同一时间只能处理一件事情，为了协调事件、用户交互、脚本、UI 渲染和网络处理等行为，防止主线程的不阻塞，Event Loop （事件循环）应运而生</p>
-<p>那么，什么是事件循环呢？（浏览器</p>
+        <h1 id="js—事件循环（宏、微任务）"><a href="#js—事件循环（宏、微任务）" class="headerlink" title="js—事件循环（宏、微任务）"></a>js—事件循环（宏、微任务）</h1><h2 id="一、事件循环的出现"><a href="#一、事件循环的出现" class="headerlink" title="一、事件循环的出现"></a>一、事件循环的出现</h2><p><strong>请注意：在js中，所有的异步任务都是放到事件循环队列中等待执行栈来调用，没有单独的线程</strong></p>
+<p>  众所周知，js是单线程语言，同一时间只能处理一件事情，为了协调事件、用户交互、脚本、UI 渲染和网络处理等行为，防止主线程的不阻塞，Event Loop （事件循环）应运而生</p>
+<p>  那么，什么是事件循环呢？（浏览器</p>
 <blockquote>
-<p>事件循环即为：浏览器的 js 引擎 中等待任务，执行任务，进入休眠状态等待更多任务这几个状态之间转换的无限循环。</p>
+<p>事件循环即为：浏览器的 js 引擎 中等待任务，执行任务，进入休眠状态等待更多任务这几个状态之间转换的无限循环。 </p>
 <p>你可以将它理解成一个算法。这个算法要完成的功能就是将上面的任务完成</p>
 </blockquote>
 <ul>
-<li>
-<p>JS分为同步任务和异步任务</p>
+<li><p>JS分为同步任务和异步任务</p>
 </li>
-<li>
-<p>同步任务都在主线程上执行，形成一个执行栈</p>
+<li><p>同步任务都在主线程上执行，形成一个执行栈</p>
 </li>
-<li>
-<p>主线程之外，事件触发线程管理着一个任务队列，只要异步任务有了运行结果，就在任务队列之中放置一个事件。</p>
+<li><p>主线程之外，事件触发线程管理着一个任务队列，只要异步任务有了运行结果，就在任务队列之中放置一个事件。</p>
 </li>
-<li>
-<p>一旦执行栈中的所有同步任务执行完毕（此时JS引擎空闲），系统就会读取任务队列，将可运行的异步任务添加到可执行栈中，开始执行</p>
+<li><p>一旦执行栈中的所有同步任务执行完毕（此时JS引擎空闲），系统就会读取任务队列，将可运行的异步任务添加到可执行栈中，开始执行</p>
 <blockquote>
 <p>同步任务：</p>
 <p>直接输出的console.log()函数、new 的 promise函数</p>
@@ -499,8 +493,8 @@
 </li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OFZjzT"><img src="https://s1.ax1x.com/2022/05/02/OFZjzT.jpg" alt="OFZjzT.jpg"></a></p>
-<h3 id="二、宏任务和微任务">二、宏任务和微任务</h3>
-<blockquote></blockquote>
+<h3 id="二、宏任务和微任务"><a href="#二、宏任务和微任务" class="headerlink" title="二、宏任务和微任务"></a>二、宏任务和微任务</h3><blockquote>
+</blockquote>
 <ul>
 <li>宏任务：</li>
 </ul>
@@ -517,8 +511,7 @@
 <p>所以它的响应速度相比setTimeout（setTimeout是task）会更快，因为无需等渲染。也就是说，在某一个macrotask执行完后，就会将在它执行期间产生的所有microtask都执行完毕（在渲染前）。</p>
 <p><strong>微任务包含</strong>：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Promise.then</span><br><span class="line">Object.observe</span><br><span class="line">MutationObserver</span><br><span class="line">process.nextTick(Node.js 环境)</span><br></pre></td></tr></table></figure>
-<h3 id="运行机制">运行机制</h3>
-<p>在事件循环中，每进行一次循环操作称为 tick，每一次 tick 的任务处理模型是比较复杂的，但关键步骤如下：</p>
+<h3 id="运行机制"><a href="#运行机制" class="headerlink" title="运行机制"></a>运行机制</h3><p>在事件循环中，每进行一次循环操作称为 tick，每一次 tick 的任务处理模型是比较复杂的，但关键步骤如下：</p>
 <ul>
 <li>执行一个宏任务（栈中没有就从事件队列中获取）</li>
 <li>执行过程中如果遇到微任务，就将它添加到微任务的任务队列中</li>
@@ -531,9 +524,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;同步代码1&#x27;</span>);<span class="comment">//同步任务 率先执行</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;setTimeout&#x27;</span>)<span class="comment">// 异步任务的宏任务</span></span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;同步代码2&#x27;</span>)<span class="comment">//同步任务</span></span><br><span class="line">  resolve()</span><br><span class="line">&#125;).then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;promise.then&#x27;</span>)<span class="comment">//异步任务的微任务</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;同步代码3&#x27;</span>);<span class="comment">//同步任务</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">output:</span></span><br><span class="line"><span class="comment">同步代码1</span></span><br><span class="line"><span class="comment">同步代码2</span></span><br><span class="line"><span class="comment">同步代码3</span></span><br><span class="line"><span class="comment">promise.then</span></span><br><span class="line"><span class="comment">setTimeout</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">首先执行宏任务：整体的script代码，输出同步代码1</span></span><br><span class="line"><span class="comment">遇到setTimeout函数，将其加入到setTimeut宏任务队列中</span></span><br><span class="line"><span class="comment">遇到 promise.then()，加入微任务，当前微任务队列(promise)</span></span><br><span class="line"><span class="comment">然后输出 同步代码2</span></span><br><span class="line"><span class="comment">接着输出 同步任务3 此时，宏任务执行完毕</span></span><br><span class="line"><span class="comment">开始执行微任务promise 输出 : promise.then</span></span><br><span class="line"><span class="comment">待微任务执行完毕后继续执行新的宏任务 即：setTimeout宏任务</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">async1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;async1 start&quot;</span>);</span><br><span class="line">  <span class="keyword">await</span> async2();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;async1 end&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">async2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;async2&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">async1();</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;timeout&quot;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;promise1&quot;</span>);</span><br><span class="line">  resolve();</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;promise2&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;script end&quot;</span>);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">首先，执行异步操作async function （其本质为将await后面的操作封装为promise的resolver 里，因此会发生阻塞）打印async1 start</span></span><br><span class="line"><span class="comment">接着执行async2() 打印async2</span></span><br><span class="line"><span class="comment">然后遇到setTimeout 异步操作 放进宏任务</span></span><br><span class="line"><span class="comment">接着遇到promise 同步执行打印promise1 遇到reserve（）放进微任务队列中</span></span><br><span class="line"><span class="comment">同步执行完script end 本次宏任务执行完毕 执行微任务，根据队列的先进先出原则 打印 async1 end  接着进入promise微任务 打印promise2</span></span><br><span class="line"><span class="comment">接着 循环执行 setTimeout 宏任务 打印timeout</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">result:</span></span><br><span class="line"><span class="comment">async1 start</span></span><br><span class="line"><span class="comment"> async2</span></span><br><span class="line"><span class="comment"> promise1</span></span><br><span class="line"><span class="comment"> script end</span></span><br><span class="line"><span class="comment"> async1 end</span></span><br><span class="line"><span class="comment"> promise2</span></span><br><span class="line"><span class="comment"> timeout</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">写在后面：</span><br><span class="line"></span><br><span class="line">**<span class="string">&quot;任务队列&quot;</span>是一个事件的队列（也可以理解成消息的队列），IO设备完成一项任务，就在<span class="string">&quot;任务队列&quot;</span>中添加一个事件，表示相关的异步任务可以进入<span class="string">&quot;执行栈&quot;</span>了**。主线程读取<span class="string">&quot;任务队列&quot;</span>，就是读取里面有哪些事件。</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;任务队列&quot;</span>是一个先进先出的数据结构，排在前面的事件，优先被主线程读取。主线程的读取过程基本上是自动的，只要执行栈一清空，<span class="string">&quot;任务队列&quot;</span>上第一位的事件就自动进入主线程。但是，由于存在后文提到的<span class="string">&quot;定时器&quot;</span>功能，主线程首先要检查一下执行时间，某些事件只有到了规定的时间，才能返回主线程。</span><br><span class="line"></span><br><span class="line"><span class="keyword">JavaScript中没有任何代码时立即执行的，都是进程空闲时尽快执行</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"></span></span><br></pre></td></tr></table></figure>
-<h3 id="Node-js的事件循环（了解">Node.js的事件循环（了解</h3>
-<h4 id="（1）事件循环的概念">（1）事件循环的概念</h4>
-<p>对于Node.js的事件循环，官网的描述如下：</p>
+<h3 id="Node-js的事件循环（了解"><a href="#Node-js的事件循环（了解" class="headerlink" title="Node.js的事件循环（了解"></a>Node.js的事件循环（了解</h3><h4 id="（1）事件循环的概念"><a href="#（1）事件循环的概念" class="headerlink" title="（1）事件循环的概念"></a>（1）事件循环的概念</h4><p>对于Node.js的事件循环，官网的描述如下：</p>
 <blockquote>
 <p>When Node.js starts, it initializes the event loop, processes the provided input script (or drops into the <a href="https://link.juejin.cn?target=https%3A%2F%2Fnodejs.org%2Fapi%2Frepl.html%23repl_repl">REPL</a>, which is not covered in this document) which may make async API calls, schedule timers, or call <code>process.nextTick()</code>, then begins processing the event loop.</p>
 </blockquote>
@@ -553,8 +544,7 @@
 <li>libuv库负责Node API的执行。它将不同的任务分配给不同的线程，形成一个Event Loop（事件循环），以异步的方式将任务的执行结果返回给V8引擎；</li>
 <li>V8引擎将结果返回给用户；</li>
 </ol>
-<h4 id="（2）事件循环的流程">（2）事件循环的流程</h4>
-<p>其中libuv引擎中的事件循环分为 6 个阶段，它们会按照顺序反复运行。每当进入某一个阶段的时候，都会从对应的回调队列中取出函数去执行。当队列为空或者执行的回调函数数量到达系统设定的阈值，就会进入下一阶段。下面 是Eventloop 事件循环的流程：</p>
+<h4 id="（2）事件循环的流程"><a href="#（2）事件循环的流程" class="headerlink" title="（2）事件循环的流程"></a>（2）事件循环的流程</h4><p>其中libuv引擎中的事件循环分为 6 个阶段，它们会按照顺序反复运行。每当进入某一个阶段的时候，都会从对应的回调队列中取出函数去执行。当队列为空或者执行的回调函数数量到达系统设定的阈值，就会进入下一阶段。下面 是Eventloop 事件循环的流程：</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/22997e327c5d4defaaa1ee4aa264ad4b~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp" alt="事件循环-第 2 页.png"></p>
 <p>整个流程分为六个阶段，当这六个阶段执行完一次之后，才可以算得上执行了一次 Eventloop 的循环过程。下面来看下这六个阶段都做了哪些事：</p>
 <ol>
@@ -581,14 +571,12 @@
 <p>当设定了 timer 且 poll 队列为空，则会判断是否有 timer 超时，如果有的就会回到 timer 阶段执行回调。</p>
 <p>这一过程的具体执行流程如下图所示：</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dd424a6a6443420ba545a3a2467164c0~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp" alt="image.png"></p>
-<h4 id="（3）宏任务和微任务">（3）宏任务和微任务</h4>
-<p>Node.js事件循环的异步队列也分为两种：宏任务队列和微任务队列。</p>
+<h4 id="（3）宏任务和微任务"><a href="#（3）宏任务和微任务" class="headerlink" title="（3）宏任务和微任务"></a>（3）宏任务和微任务</h4><p>Node.js事件循环的异步队列也分为两种：宏任务队列和微任务队列。</p>
 <ul>
 <li>常见的宏任务：setTimeout、setInterval、 setImmediate、script（整体代码）、 I/O 操作等。</li>
 <li>常见的微任务：process.nextTick、new Promise().then(回调)等。</li>
 </ul>
-<h4 id="（4）process-nextTick">（4）process.nextTick()</h4>
-<p>上面提到了process.nextTick()，它是node中新引入的一个任务队列，它会在上述各个阶段结束时，在进入下一个阶段之前立即执行。</p>
+<h4 id="（4）process-nextTick"><a href="#（4）process-nextTick" class="headerlink" title="（4）process.nextTick()"></a>（4）process.nextTick()</h4><p>上面提到了process.nextTick()，它是node中新引入的一个任务队列，它会在上述各个阶段结束时，在进入下一个阶段之前立即执行。</p>
 <p>Node.js官方文档的解释如下：</p>
 <blockquote>
 <p>process.nextTick()is not technically part of the event loop. Instead, thenextTickQueuewill be processed after the current operation is completed, regardless of the current phase of the event loop. Here, an operation is defined as a transition from the underlying C/C++ handler, and handling the JavaScript that needs to be executed.</p>
@@ -598,8 +586,7 @@
 <p>输出结果如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nextTick</span><br><span class="line">promise</span><br><span class="line">timeout</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 <p>可以看到，process.nextTick()是优先于promise的回调执行。</p>
-<h4 id="（5）setImmediate-和-setTimeout">（5）setImmediate 和 setTimeout</h4>
-<p>上面还提到了setImmediate 和 setTimeout，这两者很相似，主要区别在于调用时机的不同：</p>
+<h4 id="（5）setImmediate-和-setTimeout"><a href="#（5）setImmediate-和-setTimeout" class="headerlink" title="（5）setImmediate 和 setTimeout"></a>（5）setImmediate 和 setTimeout</h4><p>上面还提到了setImmediate 和 setTimeout，这两者很相似，主要区别在于调用时机的不同：</p>
 <ul>
 <li><strong>setImmediate</strong>：在poll阶段完成时执行，即check阶段；</li>
 <li><strong>setTimeout</strong>：在poll阶段为空闲时，且设定时间到达后执行，但它在timer阶段执行；</li>
@@ -609,8 +596,7 @@
 <p>输出结果如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">timeout</span><br><span class="line">setImmediate</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 <p>在上面代码的执行过程中，第一轮循环后，分别将 setTimeout  和 setImmediate 加入了各自阶段的任务队列。第二轮循环首先进入<strong>timers 阶段</strong>，执行定时器队列回调，然后 <strong>pending callbacks</strong>和<strong>poll 阶段</strong>没有任务，因此进入<strong>check 阶段</strong>执行 setImmediate 回调。所以最后输出为timeout、setImmediate。</p>
-<h3 id="4-Node与浏览器Event-Loop差异">4. <strong>Node与浏览器Event Loop差异</strong></h3>
-<p>Node.js与浏览器的 Event Loop 差异如下：</p>
+<h3 id="4-Node与浏览器Event-Loop差异"><a href="#4-Node与浏览器Event-Loop差异" class="headerlink" title="4. Node与浏览器Event Loop差异"></a>4. <strong>Node与浏览器Event Loop差异</strong></h3><p>Node.js与浏览器的 Event Loop 差异如下：</p>
 <ul>
 <li>Node.js：microtask 在事件循环的各个阶段之间执行；</li>
 <li>浏览器：microtask 在事件循环的 macrotask 执行完之后执行；</li>
@@ -776,7 +762,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">js—事件循环（宏、微任务）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%87%BA%E7%8E%B0"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、事件循环的出现</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">二、宏任务和微任务</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">运行机制</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Node-js%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88%E4%BA%86%E8%A7%A3"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">Node.js的事件循环（了解</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%EF%BC%881%EF%BC%89%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-nav-number">1.1.3.1.</span> <span class="toc-nav-text">（1）事件循环的概念</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%EF%BC%882%EF%BC%89%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">1.1.3.2.</span> <span class="toc-nav-text">（2）事件循环的流程</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%EF%BC%883%EF%BC%89%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="toc-nav-number">1.1.3.3.</span> <span class="toc-nav-text">（3）宏任务和微任务</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%EF%BC%884%EF%BC%89process-nextTick"><span class="toc-nav-number">1.1.3.4.</span> <span class="toc-nav-text">（4）process.nextTick()</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%EF%BC%885%EF%BC%89setImmediate-%E5%92%8C-setTimeout"><span class="toc-nav-number">1.1.3.5.</span> <span class="toc-nav-text">（5）setImmediate 和 setTimeout</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-Node%E4%B8%8E%E6%B5%8F%E8%A7%88%E5%99%A8Event-Loop%E5%B7%AE%E5%BC%82"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">4. Node与浏览器Event Loop差异</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#js%E2%80%94%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88%E5%AE%8F%E3%80%81%E5%BE%AE%E4%BB%BB%E5%8A%A1%EF%BC%89"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">js—事件循环（宏、微任务）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%87%BA%E7%8E%B0"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、事件循环的出现</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">二、宏任务和微任务</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">运行机制</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Node-js%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%88%E4%BA%86%E8%A7%A3"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">Node.js的事件循环（了解</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%EF%BC%881%EF%BC%89%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-nav-number">1.1.3.1.</span> <span class="toc-nav-text">（1）事件循环的概念</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%EF%BC%882%EF%BC%89%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">1.1.3.2.</span> <span class="toc-nav-text">（2）事件循环的流程</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%EF%BC%883%EF%BC%89%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="toc-nav-number">1.1.3.3.</span> <span class="toc-nav-text">（3）宏任务和微任务</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%EF%BC%884%EF%BC%89process-nextTick"><span class="toc-nav-number">1.1.3.4.</span> <span class="toc-nav-text">（4）process.nextTick()</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%EF%BC%885%EF%BC%89setImmediate-%E5%92%8C-setTimeout"><span class="toc-nav-number">1.1.3.5.</span> <span class="toc-nav-text">（5）setImmediate 和 setTimeout</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-Node%E4%B8%8E%E6%B5%8F%E8%A7%88%E5%99%A8Event-Loop%E5%B7%AE%E5%BC%82"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">4. Node与浏览器Event Loop差异</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>

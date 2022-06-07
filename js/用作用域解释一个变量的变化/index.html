@@ -243,6 +243,17 @@
 
           
           
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
@@ -260,17 +271,6 @@
             <a href="/tags/">
               
               TAGS
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -407,7 +407,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">143</span> In Total
+              Words <span class="post-count">134</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,15 +469,14 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>js的作用域角度解释a变量的变化</h1>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">func</span>)</span>&#123;</span><br><span class="line">    func(<span class="string">&quot;changed&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a=<span class="string">&quot;unchanged&quot;</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">        a=res</span><br><span class="line">    &#125;</span><br><span class="line">    foo(b);</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;</span><br><span class="line">bar()</span><br></pre></td></tr></table></figure>
+        <h1 id="js的作用域角度解释a变量的变化"><a href="#js的作用域角度解释a变量的变化" class="headerlink" title="js的作用域角度解释a变量的变化"></a>js的作用域角度解释a变量的变化</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">func</span>)</span>&#123;</span><br><span class="line">    func(<span class="string">&quot;changed&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a=<span class="string">&quot;unchanged&quot;</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">        a=res</span><br><span class="line">    &#125;</span><br><span class="line">    foo(b);</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">&#125;</span><br><span class="line">bar()</span><br></pre></td></tr></table></figure>
 <p>先用作用域的思想考虑一下，bar（）调用函数；</p>
-<p>在bar内部，定义a=&quot;unchanged&quot;后，调用foo函数，并传入b这个参数；</p>
-<p>在foo函数中调用b函数，传入&quot;changed&quot;作为res赋值给a。而此时的a指的是&quot;unchanged&quot;；</p>
+<p>在bar内部，定义a=”unchanged”后，调用foo函数，并传入b这个参数；</p>
+<p>在foo函数中调用b函数，传入”changed”作为res赋值给a。而此时的a指的是”unchanged”；</p>
 <p>接着打印a，此时的a为changed；</p>
 <p>我们来验证一下：</p>
 <p><img src="https://s3.bmp.ovh/imgs/2022/04/11/068352ff66e25e83.png" alt=""></p>
-<p>输出&quot;changed&quot;没有问题</p>
+<p>输出”changed”没有问题</p>
 
 
         <hr>
@@ -632,7 +631,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">js的作用域角度解释a变量的变化</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#js%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E8%A7%92%E5%BA%A6%E8%A7%A3%E9%87%8Aa%E5%8F%98%E9%87%8F%E7%9A%84%E5%8F%98%E5%8C%96"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">js的作用域角度解释a变量的变化</span></a></li></ol>
         
         </div>
       </aside>

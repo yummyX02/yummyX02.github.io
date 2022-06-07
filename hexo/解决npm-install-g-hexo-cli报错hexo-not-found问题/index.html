@@ -243,6 +243,17 @@
 
           
           
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
@@ -260,17 +271,6 @@
             <a href="/tags/">
               
               TAGS
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -407,7 +407,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">569</span> In Total
+              Words <span class="post-count">568</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,26 +469,22 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>解决npm install -g hexo-cli报错hexo not found问题</h1>
-<p>作为一个初入IT的小白，最近想搭建一个个人博客算是记录自己的学习，但是安装hexo的时候一直报错bash: hexo: command not found，官网的安装命令如下：</p>
+        <h1 id="解决npm-install-g-hexo-cli报错hexo-not-found问题"><a href="#解决npm-install-g-hexo-cli报错hexo-not-found问题" class="headerlink" title="解决npm install -g hexo-cli报错hexo not found问题"></a>解决npm install -g hexo-cli报错hexo not found问题</h1><p>作为一个初入IT的小白，最近想搭建一个个人博客算是记录自己的学习，但是安装hexo的时候一直报错bash: hexo: command not found，官网的安装命令如下：</p>
 <figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.npm install hexo-cli -g</span><br><span class="line"><span class="number">2</span>.hexo init blog</span><br><span class="line"><span class="number">3</span>.cd blog</span><br><span class="line"><span class="number">4</span>.npm install</span><br><span class="line"><span class="number">5</span>.hexo server</span><br><span class="line"><span class="number">1.2.3.4</span>.<span class="number">5</span>.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="总结网上解决这个错误的方法有以下几种：">总结网上解决这个错误的方法有以下几种：</h4>
-<ul>
+<h4 id="总结网上解决这个错误的方法有以下几种："><a href="#总结网上解决这个错误的方法有以下几种：" class="headerlink" title="总结网上解决这个错误的方法有以下几种："></a>总结网上解决这个错误的方法有以下几种：</h4><ul>
 <li>node的npm环境没有配好，重装node，默认路径安装解决</li>
 <li>利用git bash安装的时候没有安装git的，但我觉得你都已经在使用git bash了没有git怎么打开的？小纠结~</li>
 <li>然后还有node不是最新版本的这样</li>
-<li>Mac电脑报错命令前面要加suto这样。但是我的电脑是win10，所以也不行。<br>
-唉，安装了好久好久，failed again and again.中间遇到好多人给我说怎么解决，基本就是上面的几种方法加重装系统，实在不适合我。（ps：我才重装完系统没几天~）</li>
+<li>Mac电脑报错命令前面要加suto这样。但是我的电脑是win10，所以也不行。<br> 唉，安装了好久好久，failed again and again.中间遇到好多人给我说怎么解决，基本就是上面的几种方法加重装系统，实在不适合我。（ps：我才重装完系统没几天~）</li>
 </ul>
-<h4 id="附上我的解决方案：">附上我的解决方案：</h4>
-<p>前提： 重要！！！</p>
+<h4 id="附上我的解决方案："><a href="#附上我的解决方案：" class="headerlink" title="附上我的解决方案："></a>附上我的解决方案：</h4><p>前提： 重要！！！</p>
 <ul>
 <li>安装好node，配置好node的环境。</li>
 <li>选择一个磁盘，简历一个文件夹，取名为blog（取啥都行，自己知道以后干嘛的就好）</li>
 <li>打开建好的文件夹，按住shift同时鼠标右键，选择powershell选项打开命令提示符，前提准备就算完成啦。</li>
 <li>然后按照下面的指令一步步输入，然后就好啦~</li>
 </ul>
-<p>在命令的前面加上npx。</p>
+<p>  在命令的前面加上npx。</p>
 <ul>
 <li>npx hexo init blog</li>
 <li>cd blog</li>
@@ -497,9 +493,7 @@
 <li>本地打开<a href="https://link.juejin.cn?target=http%3A%2F%2Flocalhost%3A4000%2F%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E5%95%A6%EF%BC%88%E6%89%93%E5%BC%80%E6%9C%89%E7%82%B9%E5%A5%BD%E7%9C%8B%E5%93%A6%EF%BC%89">http://localhost:4000/就可以看到啦（打开有点好看哦）</a></li>
 </ul>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b358c68850c486e88b60de2b50be2df~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp" alt="使用命令npm install -g hexo-cli 安装Hexo报错bash: hexo: command not found问题解决_hexo-cli "></p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d6ec3f7431f345f3a7565938264cdf08~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp" alt="使用命令npm install -g hexo-cli 安装Hexo报错bash: hexo: command not found问题解决_hexo-cli _02"><br>
-最后解释一下，为啥要在前面加上npx。<br>
-在大牛阮一峰的网络日志中，他是这么描述的：“npx 想要解决的主要问题，就是调用项目内部安装的模块”，所以可以理解为在命令行下调用，可以让项目内部安装的模块用起来更方便，npx运行的时候，会到node_modules/.bin路径和环境变量$PATH里面，检查命令是否存在，所以系统命令也可以调用，即上面的命令安装不成功的时候加上npx的话也许就可以成功了哦~</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d6ec3f7431f345f3a7565938264cdf08~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp" alt="使用命令npm install -g hexo-cli 安装Hexo报错bash: hexo: command not found问题解决_hexo-cli _02"><br> 最后解释一下，为啥要在前面加上npx。<br> 在大牛阮一峰的网络日志中，他是这么描述的：“npx 想要解决的主要问题，就是调用项目内部安装的模块”，所以可以理解为在命令行下调用，可以让项目内部安装的模块用起来更方便，npx运行的时候，会到node_modules/.bin路径和环境变量$PATH里面，检查命令是否存在，所以系统命令也可以调用，即上面的命令安装不成功的时候加上npx的话也许就可以成功了哦~</p>
 
 
         <hr>
@@ -654,7 +648,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">解决npm install -g hexo-cli报错hexo not found问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93%E7%BD%91%E4%B8%8A%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%A7%8D%EF%BC%9A"><span class="toc-nav-number">1.0.0.1.</span> <span class="toc-nav-text">总结网上解决这个错误的方法有以下几种：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%99%84%E4%B8%8A%E6%88%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="toc-nav-number">1.0.0.2.</span> <span class="toc-nav-text">附上我的解决方案：</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E8%A7%A3%E5%86%B3npm-install-g-hexo-cli%E6%8A%A5%E9%94%99hexo-not-found%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">解决npm install -g hexo-cli报错hexo not found问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93%E7%BD%91%E4%B8%8A%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E4%BB%A5%E4%B8%8B%E5%87%A0%E7%A7%8D%EF%BC%9A"><span class="toc-nav-number">1.0.0.1.</span> <span class="toc-nav-text">总结网上解决这个错误的方法有以下几种：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%99%84%E4%B8%8A%E6%88%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="toc-nav-number">1.0.0.2.</span> <span class="toc-nav-text">附上我的解决方案：</span></a></li></ol></li></ol></li></ol></li></ol>
         
         </div>
       </aside>

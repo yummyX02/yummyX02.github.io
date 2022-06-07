@@ -243,6 +243,17 @@
 
           
           
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
@@ -260,17 +271,6 @@
             <a href="/tags/">
               
               TAGS
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -469,22 +469,19 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>C++ 中lower_bound函数</h1>
-<p>该函数内置在#include<algorithm>中，使用了二分查找的思想</p>
+        <h1 id="C-中lower-bound函数"><a href="#C-中lower-bound函数" class="headerlink" title="C++ 中lower_bound函数"></a>C++ 中lower_bound函数</h1><p>该函数内置在#include<algorithm>中，使用了二分查找的思想</p>
 <p><strong>tips：返回的是地址</strong></p>
 <ul>
-<li>
-<p>在由小到大的排序数组中</p>
-<p>lower_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找第一个大于或等于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。</p>
-<p>upper_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找第一个大于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标</p>
-<hr>
-</li>
-<li>
-<p>在由大到小的数组中</p>
-<p>lower_bound( begin,end,num,greater<type>() ):从数组的begin位置到end-1位置二分查找第一个小于或等于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。</p>
-<p>upper_bound( begin,end,num,greater<type>() ):从数组的begin位置到end-1位置二分查找第一个小于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。</p>
-</li>
+<li>在由小到大的排序数组中</li>
 </ul>
+<p>  lower_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找第一个大于或等于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。</p>
+<p>  upper_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找第一个大于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标</p>
+<hr>
+<ul>
+<li>在由大到小的数组中</li>
+</ul>
+<p>  lower_bound( begin,end,num,greater<type>() ):从数组的begin位置到end-1位置二分查找第一个小于或等于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。</p>
+<p>  upper_bound( begin,end,num,greater<type>() ):从数组的begin位置到end-1位置二分查找第一个小于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。</p>
 <hr>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100000</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">2</span>*<span class="built_in"><span class="keyword">int</span></span>(<span class="number">1e9</span>)+<span class="number">10</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a&gt;b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num[<span class="number">6</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">15</span>,<span class="number">34</span>&#125;; </span><br><span class="line">	<span class="built_in">sort</span>(num,num+<span class="number">6</span>);                           <span class="comment">//按从小到大排序 </span></span><br><span class="line">	<span class="keyword">int</span> pos1=<span class="built_in">lower_bound</span>(num,num+<span class="number">6</span>,<span class="number">7</span>)-num;    <span class="comment">//返回数组中第一个大于或等于被查数的值 </span></span><br><span class="line">	<span class="keyword">int</span> pos2=<span class="built_in">upper_bound</span>(num,num+<span class="number">6</span>,<span class="number">7</span>)-num;    <span class="comment">//返回数组中第一个大于被查数的值</span></span><br><span class="line">	cout&lt;&lt;pos1&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;num[pos1]&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;pos2&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;num[pos2]&lt;&lt;endl;</span><br><span class="line">	<span class="built_in">sort</span>(num,num+<span class="number">6</span>,cmd);                      <span class="comment">//按从大到小排序</span></span><br><span class="line">	<span class="keyword">int</span> pos3=<span class="built_in">lower_bound</span>(num,num+<span class="number">6</span>,<span class="number">7</span>,greater&lt;<span class="keyword">int</span>&gt;())-num;  <span class="comment">//返回数组中第一个小于或等于被查数的值 </span></span><br><span class="line">	<span class="keyword">int</span> pos4=<span class="built_in">upper_bound</span>(num,num+<span class="number">6</span>,<span class="number">7</span>,greater&lt;<span class="keyword">int</span>&gt;())-num;  <span class="comment">//返回数组中第一个小于被查数的值 </span></span><br><span class="line">	cout&lt;&lt;pos3&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;num[pos3]&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;pos4&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;num[pos4]&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 <p>利用重载操作符方法实现</p>
@@ -644,7 +641,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++ 中lower_bound函数</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#C-%E4%B8%ADlower-bound%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++ 中lower_bound函数</span></a></li></ol>
         
         </div>
       </aside>

@@ -243,6 +243,17 @@
 
           
           
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
@@ -260,17 +271,6 @@
             <a href="/tags/">
               
               TAGS
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -469,27 +469,22 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>C++迭代器</h1>
-<p><strong>迭代器 (iterator)</strong> 是 C++ 程序中常用的一种设计模式，它最重要的作用是为访问容器提供了统一的接口，将容器和算法连接起来</p>
+        <h1 id="C-迭代器"><a href="#C-迭代器" class="headerlink" title="C++迭代器"></a>C++迭代器</h1><p><strong>迭代器 (iterator)</strong> 是 C++ 程序中常用的一种设计模式，它最重要的作用是为访问容器提供了统一的接口，将容器和算法连接起来</p>
 <ul>
-<li>C++ STL 有许多容器，例如 vector、list、deque、map、unordered_map</li>
+<li>C++ STL 有许多容器，例如 vector、list、deque、map、unordered_map </li>
 </ul>
-<h2 id="一、为什么使用迭代器">一、为什么使用迭代器</h2>
-<p>** 要访问顺序容器和关联容器中的元素，需要通过“迭代器&quot;</p>
+<h2 id="一、为什么使用迭代器"><a href="#一、为什么使用迭代器" class="headerlink" title="一、为什么使用迭代器"></a>一、为什么使用迭代器</h2><p>** 要访问顺序容器和关联容器中的元素，需要通过“迭代器”</p>
 <p>** 迭代器是一个变量，相当于容器和操纵容器的算法之间的中介</p>
 <p>** 可以指向容器中的某个元素，通过迭代器就可以读写它指向的元素。从这一点上看，迭代器和<a target="_blank" rel="noopener" href="http://c.biancheng.net/c/80/">指针</a>类似</p>
 <p>** C++中对于容器的遍历更倾向于使用迭代器而非下标</p>
-<h2 id="二、迭代器的种类">二、迭代器的种类</h2>
-<h4 id="迭代器按功能分成五类：">迭代器按功能分成五类：</h4>
-<ol>
+<h2 id="二、迭代器的种类"><a href="#二、迭代器的种类" class="headerlink" title="二、迭代器的种类"></a>二、迭代器的种类</h2><h4 id="迭代器按功能分成五类："><a href="#迭代器按功能分成五类：" class="headerlink" title="迭代器按功能分成五类："></a>迭代器按功能分成五类：</h4><ol>
 <li>输入迭代器：从对象中不断读出元素</li>
 <li>输出迭代器：向对象不断添加元素</li>
 <li>前向迭代器：单向遍历容器中的元素</li>
 <li>双向迭代器：双向遍历容器中的元素</li>
 <li>随机访问迭代器：随机访问容器中任意位置的元素</li>
 </ol>
-<h4 id="迭代器按定义方法分四类">迭代器按定义方法分四类</h4>
-<p>\1) 正向迭代器，定义方法如下：</p>
+<h4 id="迭代器按定义方法分四类"><a href="#迭代器按定义方法分四类" class="headerlink" title="迭代器按定义方法分四类"></a>迭代器按定义方法分四类</h4><p>\1) 正向迭代器，定义方法如下：</p>
 <p>容器类名::iterator 迭代器名;</p>
 <p>\2) 常量正向迭代器，定义方法如下：</p>
 <p>容器类名::const_iterator 迭代器名;</p>
@@ -497,10 +492,8 @@
 <p>容器类名::reverse_iterator 迭代器名;</p>
 <p>\4) 常量反向迭代器，定义方法如下：</p>
 <p>容器类名::const_reverse_iterator 迭代器名;</p>
-<h2 id="三、迭代器函数">三、迭代器函数</h2>
-<p><strong>C++ 已经为我们实现了一组通用的操作函数，定义在头文件 <code>&lt;algorithm&gt;</code> 中。</strong></p>
-<h3 id="常用的函数可以分成以下-7-类：">常用的函数可以分成以下 7 类：</h3>
-<ol>
+<h2 id="三、迭代器函数"><a href="#三、迭代器函数" class="headerlink" title="三、迭代器函数"></a>三、迭代器函数</h2><p><strong>C++ 已经为我们实现了一组通用的操作函数，定义在头文件 <code>&lt;algorithm&gt;</code> 中。</strong></p>
+<h3 id="常用的函数可以分成以下-7-类："><a href="#常用的函数可以分成以下-7-类：" class="headerlink" title="常用的函数可以分成以下 7 类："></a>常用的函数可以分成以下 7 类：</h3><ol>
 <li>计数：count count_if</li>
 <li>检查条件：all_of any_of none_of</li>
 <li>遍历：for_each for_each_n</li>
@@ -509,29 +502,22 @@
 <li>填充同一元素：fill fill_n</li>
 <li>元素变换（map 操作）：transform</li>
 </ol>
-<h3 id="一个完整的迭代器语法：">一个完整的迭代器语法：</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArrayIterator</span> &#123;</span></span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">typedef</span> std::random_access_iterator_tag iterator_category;  <span class="comment">// 迭代器类型</span></span><br><span class="line">  <span class="keyword">typedef</span> <span class="keyword">int</span> value_type;        <span class="comment">// 数据类型</span></span><br><span class="line">  <span class="keyword">typedef</span> <span class="keyword">int</span>&amp; reference_type;   <span class="comment">// 数据类型的引用</span></span><br><span class="line">  <span class="keyword">typedef</span> <span class="keyword">int</span>* pointer_type;     <span class="comment">// 数据类型的指针</span></span><br><span class="line">  <span class="keyword">typedef</span> std::<span class="keyword">ptrdiff_t</span> difference_type;  <span class="comment">// 距离类型</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 迭代器的实现</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="一个完整的迭代器语法："><a href="#一个完整的迭代器语法：" class="headerlink" title="一个完整的迭代器语法："></a>一个完整的迭代器语法：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArrayIterator</span> &#123;</span></span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">typedef</span> std::random_access_iterator_tag iterator_category;  <span class="comment">// 迭代器类型</span></span><br><span class="line">  <span class="keyword">typedef</span> <span class="keyword">int</span> value_type;        <span class="comment">// 数据类型</span></span><br><span class="line">  <span class="keyword">typedef</span> <span class="keyword">int</span>&amp; reference_type;   <span class="comment">// 数据类型的引用</span></span><br><span class="line">  <span class="keyword">typedef</span> <span class="keyword">int</span>* pointer_type;     <span class="comment">// 数据类型的指针</span></span><br><span class="line">  <span class="keyword">typedef</span> std::<span class="keyword">ptrdiff_t</span> difference_type;  <span class="comment">// 距离类型</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 迭代器的实现</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>但是每个迭代器都这样写，会显得非常麻烦</p>
 <p>因此，在C++的STL中，没种容器都定义了对应的迭代器，一般定义即可：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt;::iterator    iter;    <span class="comment">//定义一个名为iter的变量</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//每种容器都定义了begin() and end()函数</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;    ivec;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;::iterator    iter1=ivec.<span class="built_in">bengin</span>();    <span class="comment">//将迭代器iter1初始化为指向ivec容器的第一个元素</span></span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;::iterator   iter2=ivec.<span class="built_in">end</span>();    <span class="comment">//将迭代器iter2初始化为指向ivec容器的最后一个元素的下一个位置</span></span><br><span class="line"></span><br><span class="line">tips：注意end并不指向容器的任何元素，而是指向容器的最后元素的下一位置，称为超出末端迭代器</span><br></pre></td></tr></table></figure>
-<h4 id="常用操作">常用操作</h4>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*iter                <span class="comment">//对iter进行解引用，返回迭代器iter指向的元素的引用</span></span><br><span class="line">iter-&gt;men            <span class="comment">//对iter进行解引用，获取指定元素中名为men的成员。等效于(*iter).men</span></span><br><span class="line">++iter                <span class="comment">//给iter加1，使其指向容器的下一个元素</span></span><br><span class="line">iter++</span><br><span class="line">--iter                <span class="comment">//给iter减1，使其指向容器的前一个元素</span></span><br><span class="line">iter--</span><br><span class="line">iter1==iter2        <span class="comment">//比较两个迭代器是否相等，当它们指向同一个容器的同一个元素或者都指向同同一个容器的超出末端的下一个位置时，它们相等 </span></span><br><span class="line">iter1!=iter2</span><br></pre></td></tr></table></figure>
+<h4 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*iter                <span class="comment">//对iter进行解引用，返回迭代器iter指向的元素的引用</span></span><br><span class="line">iter-&gt;men            <span class="comment">//对iter进行解引用，获取指定元素中名为men的成员。等效于(*iter).men</span></span><br><span class="line">++iter                <span class="comment">//给iter加1，使其指向容器的下一个元素</span></span><br><span class="line">iter++</span><br><span class="line">--iter                <span class="comment">//给iter减1，使其指向容器的前一个元素</span></span><br><span class="line">iter--</span><br><span class="line">iter1==iter2        <span class="comment">//比较两个迭代器是否相等，当它们指向同一个容器的同一个元素或者都指向同同一个容器的超出末端的下一个位置时，它们相等 </span></span><br><span class="line">iter1!=iter2</span><br></pre></td></tr></table></figure>
 <p><strong>在C++定义的容器类型中，只有vector和queue容器提供迭代器算数运算和除!=和==之外的关系运算</strong></p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">iter+n     <span class="regexp">//</span>在迭代器上加（减）整数n，将产生指向容器中钱前面（后面）第n个元素的迭代器。新计算出来的迭代器必须指向容器中的元素或超出容器末端的下一个元素</span><br><span class="line">iter-n</span><br><span class="line"></span><br><span class="line">iter1+=iter2        <span class="regexp">//</span>将iter1加上或减去iter2的运算结果赋给iter1。两个迭代器必须指向容器中的元素或超出容器末端的下一个元素</span><br><span class="line">iter1-=iter2</span><br><span class="line"></span><br><span class="line">iter1-iter2            <span class="regexp">//</span>两个迭代器的减法，得出两个迭代器的距离。两个迭代器必须指向容器中的元素或超出容器末端的下一个元素</span><br><span class="line"></span><br><span class="line">&gt;,&gt;=,&lt;,&lt;=        <span class="regexp">//</span>元素靠后的迭代器大于靠前的迭代器。两个迭代器必须指向容器中的元素或超出容器末端的下一个元素</span><br></pre></td></tr></table></figure>
-<h2 id="四、迭代器的用法">四、迭代器的用法</h2>
-<p><strong>以vector为示例</strong></p>
+<h2 id="四、迭代器的用法"><a href="#四、迭代器的用法" class="headerlink" title="四、迭代器的用法"></a>四、迭代器的用法</h2><p><strong>以vector为示例</strong></p>
 <blockquote>
-<p>vector<int>::iterator it;</p>
+<p>vector<int>::iterator it;  </p>
 <p>两个冒号表示作用域操作符。::操作符在其左操作数的作用域内找到其右操作数的名字。</p>
 <p>这样就定义了一个迭代器名字为it（名字可以随便取），并且这个迭代器的作用域是vector。</p>
 <p>这个迭代器it只是初始化，并未赋值，所以在下面的两个vector a,b都可以用it来遍历，</p>
 <p>就像定义了一个循环变量i，可以遍历两个数组a,b道理是一样的。</p>
-</blockquote>
-<blockquote>
 <p>vector的.begin()和.end()</p>
-<p>vector的.begin()和.end()方法都会返回一个vector::iterator对象，分别指向vector的首元素位置和尾元素的下一个位置（我们可以称之为结束标志位）。</p>
-</blockquote>
-<blockquote>
+<p>vector的.begin()和.end()方法都会返回一个vector::iterator对象，分别指向vector的首元素位置和尾元素的下一个位置（我们可以称之为结束标志位）。 </p>
 <p>*i  迭代器所指向的内容</p>
 <p>对一个迭代器的使用与一个指针变量的使用极为相似，或者可以这样说，指针就是一个非常标准的迭代器</p>
 </blockquote>
@@ -691,7 +677,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++迭代器</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、为什么使用迭代器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、迭代器的种类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%8C%89%E5%8A%9F%E8%83%BD%E5%88%86%E6%88%90%E4%BA%94%E7%B1%BB%EF%BC%9A"><span class="toc-nav-number">1.2.0.1.</span> <span class="toc-nav-text">迭代器按功能分成五类：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%8C%89%E5%AE%9A%E4%B9%89%E6%96%B9%E6%B3%95%E5%88%86%E5%9B%9B%E7%B1%BB"><span class="toc-nav-number">1.2.0.2.</span> <span class="toc-nav-text">迭代器按定义方法分四类</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、迭代器函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E5%88%86%E6%88%90%E4%BB%A5%E4%B8%8B-7-%E7%B1%BB%EF%BC%9A"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">常用的函数可以分成以下 7 类：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">一个完整的迭代器语法：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">1.3.2.1.</span> <span class="toc-nav-text">常用操作</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9B%E3%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">四、迭代器的用法</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#C-%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++迭代器</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、为什么使用迭代器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、迭代器的种类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%8C%89%E5%8A%9F%E8%83%BD%E5%88%86%E6%88%90%E4%BA%94%E7%B1%BB%EF%BC%9A"><span class="toc-nav-number">1.2.0.1.</span> <span class="toc-nav-text">迭代器按功能分成五类：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%8C%89%E5%AE%9A%E4%B9%89%E6%96%B9%E6%B3%95%E5%88%86%E5%9B%9B%E7%B1%BB"><span class="toc-nav-number">1.2.0.2.</span> <span class="toc-nav-text">迭代器按定义方法分四类</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、迭代器函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E5%88%86%E6%88%90%E4%BB%A5%E4%B8%8B-7-%E7%B1%BB%EF%BC%9A"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">常用的函数可以分成以下 7 类：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">一个完整的迭代器语法：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-nav-number">1.3.2.1.</span> <span class="toc-nav-text">常用操作</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9B%E3%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">四、迭代器的用法</span></a></li></ol></li></ol>
         
         </div>
       </aside>

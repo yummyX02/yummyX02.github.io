@@ -243,6 +243,17 @@
 
           
           
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
           
           
           <li>
@@ -260,17 +271,6 @@
             <a href="/tags/">
               
               TAGS
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -407,7 +407,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">352</span> In Total
+              Words <span class="post-count">351</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,15 +469,11 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>C++友元函数</h1>
-<h2 id="一、友元的作用">一、友元的作用</h2>
-<p>​	 在C++中，我们使用类对数据进行了<strong>隐藏和封装</strong>，类的数据成员一般都定义为私有成员，成员函数一般都定义为公有的，以此<strong>提供类与外界的通讯接口</strong>。但是，有时需要定义一些函数，这些函数<strong>不是类的一部分</strong>，但又需要<strong>频繁地访问类的数据成员</strong>，这时可以将这些函数定义为该函数的友元函数。除了友元函数外，还有友元类，两者统称为友元。友元的作用是提高了程序的运行效率（即减少了类型检查和安全性检查等都需要时间开销），但它破坏了类的封装性和隐藏性，使得非成员函数可以访问类的私有成员</p>
-<h2 id="二、何为友元函数">二、何为友元函数</h2>
-<p>​	所谓友元函数即为：<strong>声明在类内部，定义在类外的普通函数</strong>，但是可以访问类的私有成员</p>
+        <h1 id="C-友元函数"><a href="#C-友元函数" class="headerlink" title="C++友元函数"></a>C++友元函数</h1><h2 id="一、友元的作用"><a href="#一、友元的作用" class="headerlink" title="一、友元的作用"></a>一、友元的作用</h2><p>​     在C++中，我们使用类对数据进行了<strong>隐藏和封装</strong>，类的数据成员一般都定义为私有成员，成员函数一般都定义为公有的，以此<strong>提供类与外界的通讯接口</strong>。但是，有时需要定义一些函数，这些函数<strong>不是类的一部分</strong>，但又需要<strong>频繁地访问类的数据成员</strong>，这时可以将这些函数定义为该函数的友元函数。除了友元函数外，还有友元类，两者统称为友元。友元的作用是提高了程序的运行效率（即减少了类型检查和安全性检查等都需要时间开销），但它破坏了类的封装性和隐藏性，使得非成员函数可以访问类的私有成员</p>
+<h2 id="二、何为友元函数"><a href="#二、何为友元函数" class="headerlink" title="二、何为友元函数"></a>二、何为友元函数</h2><p>​    所谓友元函数即为：<strong>声明在类内部，定义在类外的普通函数</strong>，但是可以访问类的私有成员</p>
 <p>声明时在前面加上friend即可</p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">friend 类型 函数名(类名<span class="meta">&amp;obj)</span></span><br></pre></td></tr></table></figure>
-<h3 id="tips">tips</h3>
-<p>1.一个函数可以是多个类的友元函数，只需在多个类中进行声明即可</p>
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><p>1.一个函数可以是多个类的友元函数，只需在多个类中进行声明即可</p>
 <p>2.友元函数在类外进行定义时不需要加上类的限制</p>
 <p>3.友元函数的声明可以放在public也可以放在private</p>
 
@@ -634,7 +630,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++友元函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E5%8F%8B%E5%85%83%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、友元的作用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E4%BD%95%E4%B8%BA%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、何为友元函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#tips"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">tips</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#C-%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">C++友元函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E5%8F%8B%E5%85%83%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、友元的作用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E4%BD%95%E4%B8%BA%E5%8F%8B%E5%85%83%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、何为友元函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#tips"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">tips</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
