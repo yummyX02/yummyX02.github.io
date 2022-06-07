@@ -244,26 +244,15 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              CATEGORIES
+              ABOUT
               
               
             </a>
           </li>
+          
+          
           
           
           
@@ -279,9 +268,20 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -407,7 +407,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">648</span> In Total
+              Words <span class="post-count">651</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,7 +469,9 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="js——this的使用（区分this和e-target）"><a href="#js——this的使用（区分this和e-target）" class="headerlink" title="js——this的使用（区分this和e.target）"></a>js——this的使用（区分this和e.target）</h1><h2 id="一、什么是this"><a href="#一、什么是this" class="headerlink" title="一、什么是this"></a>一、什么是this</h2><p>1.解析器在调用函数时，美的都会向函数内部传递进一个隐含的参数</p>
+        <h1>js——this的使用（区分this和e.target）</h1>
+<h2 id="一、什么是this">一、什么是this</h2>
+<p>1.解析器在调用函数时，美的都会向函数内部传递进一个隐含的参数</p>
 <p>2.这个隐含的参数就是this，this是一个对象</p>
 <p>3.这个对象我们称为函数执行的上下文对象</p>
 <p>4.根据函数的调用方式不同，this会指向不同的对象</p>
@@ -478,13 +480,15 @@
 <p>（2）以方法的形式调用：this是调用方法的这个对象</p>
 <p>举个例子：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> name = <span class="string">&quot;hello&quot;</span>;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    fun();<span class="comment">//(log name时)hello;(obj.name)happy;(obj2.name)sad;(this.name)hello;</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> obj = &#123;</span></span><br><span class="line"><span class="javascript">      name : <span class="string">&#x27;happy&#x27;</span>,</span></span><br><span class="line"><span class="javascript">      sayName : fun<span class="comment">//(log name时)hello;(obj.name)happy;(obj2.name)sad;(this.name)hppy;</span></span></span><br><span class="line">    &#125;;</span><br><span class="line">    obj.sayName();</span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> obj2 = &#123;</span></span><br><span class="line"><span class="javascript">      name : <span class="string">&#x27;sad&#x27;</span>,</span></span><br><span class="line"><span class="javascript">      sayName : fun<span class="comment">//(log name时)hello;(obj.name)happy;(obj2.name)sad;(this.name)sad;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">    obj2.sayName();</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="二、e-target和this"><a href="#二、e-target和this" class="headerlink" title="二、e.target和this"></a>二、e.target和this</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        123</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    div.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">       <span class="built_in">console</span>.log(<span class="built_in">this</span>);<span class="comment">//&lt;div&gt;123&lt;/div&gt;</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(e.target);<span class="comment">//&lt;div&gt;123&lt;/div&gt;</span></span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、e-target和this">二、e.target和this</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        123</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    div.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">       <span class="built_in">console</span>.log(<span class="built_in">this</span>);<span class="comment">//&lt;div&gt;123&lt;/div&gt;</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(e.target);<span class="comment">//&lt;div&gt;123&lt;/div&gt;</span></span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>abc<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>abc<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>abc<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>abc<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>abc<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="comment">//当我点击li时</span></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;ul&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    ul.addEventListener(<span class="string">&#x27;cilick&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="built_in">this</span>);<span class="comment">//&lt;ul&gt;&lt;/ul&gt;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">        console.log(e.target);<span class="tag">&lt;<span class="name">li</span>&gt;</span>abc<span class="tag">&lt;<span class="name">li</span>&gt;</span></span></span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>因此：得出结论</p>
-<p>​    1.e.target返回的是触发事件的对象或元素</p>
-<p>​    2.this返回的是绑定事件的对象或元素</p>
-<p>​    3.有一个和this非常相似的属性叫做currentTarget，但同样有兼容性问题，一般不使用</p>
-<h2 id="三、this的指向问题"><a href="#三、this的指向问题" class="headerlink" title="三、this的指向问题"></a>三、this的指向问题</h2><p>tips：一般情况下，this都指向调用它的对象</p>
+<p>​	1.e.target返回的是触发事件的对象或元素</p>
+<p>​	2.this返回的是绑定事件的对象或元素</p>
+<p>​	3.有一个和this非常相似的属性叫做currentTarget，但同样有兼容性问题，一般不使用</p>
+<h2 id="三、this的指向问题">三、this的指向问题</h2>
+<p>tips：一般情况下，this都指向调用它的对象</p>
 <p>1.全局作用域或普通函数的调用，this都指向window对象（注意：定时器里面的this指向window）</p>
 <p>2.方法调用中，谁调用this指向谁</p>
 <p>3.构造函数中this指向构造函数</p>
@@ -643,7 +647,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#js%E2%80%94%E2%80%94this%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E5%8C%BA%E5%88%86this%E5%92%8Ce-target%EF%BC%89"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">js——this的使用（区分this和e.target）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFthis"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、什么是this</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81e-target%E5%92%8Cthis"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、e.target和this</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81this%E7%9A%84%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、this的指向问题</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">js——this的使用（区分this和e.target）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFthis"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、什么是this</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81e-target%E5%92%8Cthis"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、e.target和this</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81this%E7%9A%84%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、this的指向问题</span></a></li></ol></li></ol>
         
         </div>
       </aside>

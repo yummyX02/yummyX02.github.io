@@ -244,26 +244,15 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              CATEGORIES
+              ABOUT
               
               
             </a>
           </li>
+          
+          
           
           
           
@@ -279,9 +268,20 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -469,33 +469,44 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="js—同步和异步"><a href="#js—同步和异步" class="headerlink" title="js—同步和异步"></a>js—同步和异步</h1><h2 id="一、js中的事件处理机制"><a href="#一、js中的事件处理机制" class="headerlink" title="一、js中的事件处理机制"></a>一、js中的事件处理机制</h2><h3 id="1、进程、线程、协程"><a href="#1、进程、线程、协程" class="headerlink" title="1、进程、线程、协程"></a>1、进程、线程、协程</h3><ol>
-<li><p>进程（process）：保存在硬盘上的程序会被载入到内存中运行，在内存空间里面形成一个独立的内存体，这个内存体有自己独立的地址空间，系统也会为应用的每一个进程分配独立的CPU、内存等资源。</p>
+        <h1>js—同步和异步</h1>
+<h2 id="一、js中的事件处理机制">一、js中的事件处理机制</h2>
+<h3 id="1、进程、线程、协程">1、进程、线程、协程</h3>
+<ol>
+<li>
+<p>进程（process）：保存在硬盘上的程序会被载入到内存中运行，在内存空间里面形成一个独立的内存体，这个内存体有自己独立的地址空间，系统也会为应用的每一个进程分配独立的CPU、内存等资源。</p>
 </li>
-<li><p>线程（thread）：进程中执行的每一个任务指的就是线程，系统不会为其分配内存资源，各个线程共享进程拥有的内存资源(线程也被称为轻量级进程)。</p>
+<li>
+<p>线程（thread）：进程中执行的每一个任务指的就是线程，系统不会为其分配内存资源，各个线程共享进程拥有的内存资源(线程也被称为轻量级进程)。</p>
 <blockquote>
-<p> 即：线程为进程的子集</p>
+<p>即：线程为进程的子集</p>
 </blockquote>
 </li>
-<li><p>协程：一种<strong>用户态的轻量级线程</strong>，协程的调度完全由用户控制（进程和线程都是由cpu 内核进行调度,或者可以理解为<strong>协程就是线程中可以交替运行的代码片段</strong></p>
+<li>
+<p>协程：一种<strong>用户态的轻量级线程</strong>，协程的调度完全由用户控制（进程和线程都是由cpu 内核进行调度,或者可以理解为<strong>协程就是线程中可以交替运行的代码片段</strong></p>
 <blockquote>
 <p><strong>与线程的比较</strong></p>
 <ul>
 <li>线程是为了解决阻塞和并发的问题（在一段时间内执行更多的程序），协程是为了在一段时间运行更多的“程序”（应该说是函数）并且避免线程阻塞。</li>
-<li>线程切换是由操作系统的<strong>时间片控制,</strong>而协程是程序自己实现的，让协程不断轮流执行才是实现并发，所以实现协程还必须要有一个类似于时间片的结构，不同于线程的切换，<strong>协程的切换</strong>不是按照时间来算的，而是<strong>按照代码既定分配</strong>，就是说代码运行到这一行才启动协程，协程是可以由我们程序员自己操控的。</li>
+<li>线程切换是由操作系统的<strong>时间片控制,<strong>而协程是程序自己实现的，让协程不断轮流执行才是实现并发，所以实现协程还必须要有一个类似于时间片的结构，不同于线程的切换，<strong>协程的切换</strong>不是按照时间来算的，而是</strong>按照代码既定分配</strong>，就是说代码运行到这一行才启动协程，协程是可以由我们程序员自己操控的。</li>
 </ul>
 </blockquote>
 </li>
-<li><blockquote>
-<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><ol>
+<li>
+<blockquote>
+<h3 id="状态">状态</h3>
+<ol>
 <li><strong>进程三态</strong></li>
 </ol>
 <ul>
-<li><p>就绪：获取CPU外的所有资源、只要CPU分配资源就可以马上执行</p>
+<li>
+<p>就绪：获取CPU外的所有资源、只要CPU分配资源就可以马上执行</p>
 </li>
-<li><p>运行：获得处理器分配的资源，程序开始执行</p>
+<li>
+<p>运行：获得处理器分配的资源，程序开始执行</p>
 </li>
-<li><p>阻塞：正在执行的进程由于某些事件（I/O请求，申请缓存区失败）而暂时无法运行，</p>
+<li>
+<p>阻塞：正在执行的进程由于某些事件（I/O请求，申请缓存区失败）而暂时无法运行，</p>
 </li>
 </ul>
 <p>进程受到阻塞，在满足请求时进入就绪状态等待系统调用</p>
@@ -503,11 +514,14 @@
 <li><strong>线程三态</strong></li>
 </ol>
 <ul>
-<li><p>就绪：指线程具备运行的所有条件，逻辑上可以运行，在等待处理机</p>
+<li>
+<p>就绪：指线程具备运行的所有条件，逻辑上可以运行，在等待处理机</p>
 </li>
-<li><p>运行：指线程占用处理机正在运行</p>
+<li>
+<p>运行：指线程占用处理机正在运行</p>
 </li>
-<li><p>阻塞：线程在等待一个事件，逻辑上不可执行</p>
+<li>
+<p>阻塞：线程在等待一个事件，逻辑上不可执行</p>
 </li>
 </ul>
 </blockquote>
@@ -515,16 +529,22 @@
 </ol>
 <p>tips:</p>
 <ul>
-<li>一个程序至少有一个进程，一个进程至少有一个线程。</li>
-<li><p>线程不能够脱离进程而独立运行，同一进程的所有线程共享该进程的所有资源；</p>
+<li>
+<p>一个程序至少有一个进程，一个进程至少有一个线程。</p>
 </li>
-<li><p>进程是cpu资源分配的最小的单位，线程是cpu资源调度的最小的单位</p>
+<li>
+<p>线程不能够脱离进程而独立运行，同一进程的所有线程共享该进程的所有资源；</p>
 </li>
-<li><p>当进程运行时只产生一个线程，被称为单线程，否则被称为多线程。</p>
+<li>
+<p>进程是cpu资源分配的最小的单位，线程是cpu资源调度的最小的单位</p>
+</li>
+<li>
+<p>当进程运行时只产生一个线程，被称为单线程，否则被称为多线程。</p>
 </li>
 </ul>
-<h3 id="2-并发和并行"><a href="#2-并发和并行" class="headerlink" title="2.并发和并行"></a>2.并发和并行</h3><ul>
-<li>并发：在操作系统中，某一时间段，<strong>几个程序在同一个CPU上运行，但在任意一个时间点上，只有一个程序在CPU上运行</strong>。 并发解决了程序排队等待的问题，如果一个程序发生阻塞，其他程序仍然可以正常执行。 </li>
+<h3 id="2-并发和并行">2.并发和并行</h3>
+<ul>
+<li>并发：在操作系统中，某一时间段，<strong>几个程序在同一个CPU上运行，但在任意一个时间点上，只有一个程序在CPU上运行</strong>。 并发解决了程序排队等待的问题，如果一个程序发生阻塞，其他程序仍然可以正常执行。</li>
 </ul>
 <p>通俗讲：你吃饭吃到一半，电话来了，你停了下来接了电话，接完后继续吃饭，这说明你支持并发</p>
 <ul>
@@ -533,16 +553,22 @@
 <p>通俗讲：你吃饭吃到一半，电话来了，你一边打电话一边吃饭，这说明你支持并行</p>
 <p>tips：区分方法</p>
 <p>看那个是同时进行的：只有并行是同时进行的，因为它吧多个程序分配到不同的CPU上执行，而并发在每一时刻只有一个程序在运行</p>
-<h2 id="二、同步和异步"><a href="#二、同步和异步" class="headerlink" title="二、同步和异步"></a>二、同步和异步</h2><h3 id="1-何为同步和异步"><a href="#1-何为同步和异步" class="headerlink" title="1.何为同步和异步"></a>1.何为同步和异步</h3><ol>
-<li><p>同步任务：主线程上排队执行的任务，<strong>只有前一个任务执行完毕，才能继续执行下一个任务</strong>，当我们打开网站时，网站的渲染过程，比如元素的渲染，其实就是一个同步任务。</p>
+<h2 id="二、同步和异步">二、同步和异步</h2>
+<h3 id="1-何为同步和异步">1.何为同步和异步</h3>
+<ol>
+<li>
+<p>同步任务：主线程上排队执行的任务，<strong>只有前一个任务执行完毕，才能继续执行下一个任务</strong>，当我们打开网站时，网站的渲染过程，比如元素的渲染，其实就是一个同步任务。</p>
 </li>
-<li><p>异步任务：指不进入主线程，而<strong>进入任务队列的任务。</strong>只有<strong>任务队列通知主线程，某个异步任务可以执行，该任务才会进入主线程，</strong>当我们打开网站时，像图片的加载，音乐的加载，其实就是一个异步任务(<strong>单线程的**</strong>JS<strong>通过</strong>事件循环**实现异步)</p>
+<li>
+<p>异步任务：指不进入主线程，而<strong>进入任务队列的任务。<strong>只有</strong>任务队列通知主线程，某个异步任务可以执行，该任务才会进入主线程，<strong>当我们打开网站时，像图片的加载，音乐的加载，其实就是一个异步任务(<strong>单线程的****JS</strong>通过</strong>事件循环</strong>实现异步)</p>
 </li>
 </ol>
 <ul>
-<li><p><code>Js</code>引擎运行的环境是<strong>宿主环境</strong>,即Web浏览器  / <code>Node.js</code>,但这些宿主环境都提供了一种机制处理程序中多个块的执行,且执行<code>js</code>语句,这种机制被称为<strong>事件循环机制</strong></p>
+<li>
+<p><code>Js</code>引擎运行的环境是<strong>宿主环境</strong>,即Web浏览器  / <code>Node.js</code>,但这些宿主环境都提供了一种机制处理程序中多个块的执行,且执行<code>js</code>语句,这种机制被称为<strong>事件循环机制</strong></p>
 </li>
-<li><p>任务队列:一个先进先出的数据结构，也称事件队列.</p>
+<li>
+<p>任务队列:一个先进先出的数据结构，也称事件队列.</p>
 <p>宏任务</p>
 </li>
 </ul>
@@ -550,25 +576,28 @@
 <ul>
 <li>一个任务可能引起更多任务被添加：因为一个宏任务下面允许存在微任务</li>
 </ul>
-<p><img src="https://tva4.sinaimg.cn/large/006Tj0z7ly8h1ngqzeuioj30kj0evjs8.jpg"></p>
-<h4 id="异步和同步各自对应处理方式执行"><a href="#异步和同步各自对应处理方式执行" class="headerlink" title="异步和同步各自对应处理方式执行"></a>异步和同步各自对应处理方式执行</h4><ol>
+<img src="https://tva4.sinaimg.cn/large/006Tj0z7ly8h1ngqzeuioj30kj0evjs8.jpg">
+<h4 id="异步和同步各自对应处理方式执行">异步和同步各自对应处理方式执行</h4>
+<ol>
 <li>异步任务在event table中注册函数,当满足触发条件后,被推入<strong>event queue</strong></li>
 <li>同步任务进入主线程后一直执行,直到主线程空闲时,才会去event queue中查看是否有可执行的异步任务,如果有就推入主线程中</li>
 </ol>
-<p><img src="https://tva4.sinaimg.cn/large/006Tj0z7ly8h1ngsdnnk3j30nu0e1t9g.jpg"></p>
-<h4 id="JS的异步执行机制"><a href="#JS的异步执行机制" class="headerlink" title="JS的异步执行机制"></a>JS的异步执行机制</h4><p><strong>两个概念</strong></p>
+<img src="https://tva4.sinaimg.cn/large/006Tj0z7ly8h1ngsdnnk3j30nu0e1t9g.jpg">
+<h4 id="JS的异步执行机制">JS的异步执行机制</h4>
+<p><strong>两个概念</strong></p>
 <ul>
-<li><strong>Event Table（回调函数对应表）：</strong>用来存储 JavaScript 中的异步事件 (request, setTimeout, IO等) 及其对应的回调函数的列表</li>
-<li><strong>执行栈：</strong>所有同步任务都在主线程上执行，形成执行栈</li>
+<li>**Event Table（回调函数对应表）：**用来存储 JavaScript 中的异步事件 (request, setTimeout, IO等) 及其对应的回调函数的列表</li>
+<li>**执行栈：**所有同步任务都在主线程上执行，形成执行栈</li>
 </ul>
 <p><strong>步骤</strong></p>
 <ol>
-<li>文件读取操作（异步任务）会被添加到Event Table中，等<strong>I</strong>O事件完成后，就会在任务队列中添加一个事件，表示异步任务完成<strong>，</strong>可以进入执行栈</li>
+<li>文件读取操作（异步任务）会被添加到Event Table中，等<strong>I</strong>O事件完成后，就会在任务队列中添加一个事件，表示异步任务完成**，**可以进入执行栈</li>
 <li>判断主线程是否有空，当主线程处理完其它任务有空时，就会读取任务队列，如果该任务指定了回调函数，那么主线程在处理该事件时，就会执行回调函数中的代码，也就是执行异步任务</li>
 <li>单线程从从任务队列中读取任务是不断循环的，每次执行栈被清空后，都会在任务队列中读取新的任务，如果没有任务，就会等待直到有新的任务。</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;setTime之前&quot;</span>);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;<span class="comment">//setTimeout是一个异步任务</span></span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">&quot;timeout callback&quot;</span>);</span><br><span class="line">   &#125;, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;setTime之后&quot;</span>);</span><br></pre></td></tr></table></figure>
-<h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><ol>
+<h4 id="回调函数">回调函数</h4>
+<ol>
 <li><strong>定义</strong>:你自己定义的函数、你不会调用、最终执行了</li>
 <li><strong>分类:</strong> 同步和异步回调</li>
 </ol>
@@ -581,43 +610,52 @@
 <li>异步回调:不会立即执行,会放入回调队列将来执行</li>
 </ul>
 <ol>
-<li><strong>回调函数产生的问题</strong><ol>
+<li><strong>回调函数产生的问题</strong>
+<ol>
 <li><strong>回调地狱</strong></li>
 </ol>
 </li>
 </ol>
-<p>在使用JavaScript时，为了实现某些逻辑经常会写出层层嵌套的回调函数，如果嵌套过多，会极大影响代码可读性和逻辑。（eg：A函数的参数是B函数，B函数的参数C函数……）</p>
+<p>在使用JavaScript时，为了实现某些逻辑经常会写出层层嵌套的回调函数，如果嵌套过多，会极大影响代码可读性和逻辑。（eg：A函数的参数是B函数，B函数的参数C函数…）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sayhello = <span class="function"><span class="keyword">function</span> (<span class="params">name, callback</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name);</span><br><span class="line">    callback();</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line">sayhello(<span class="string">&quot;first&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  sayhello(<span class="string">&quot;second&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    sayhello(<span class="string">&quot;third&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;end&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ol>
-<li><strong>控制反转(IOC)</strong> </li>
+<li><strong>控制反转(IOC)</strong></li>
 </ol>
 <p>回调最大的问题,会导致信任链断裂,使用回调需要应用某种逻辑解决所有这些控制反转导致的信任问题.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A</span></span><br><span class="line">ajax(<span class="string">&quot;/xxx&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//C</span></span><br><span class="line"></span><br><span class="line">&#125;,<span class="number">1000</span>)</span><br><span class="line"><span class="comment">//B</span></span><br></pre></td></tr></table></figure>
 <p>问题总结:与<strong>大脑方式不同</strong>有顺序性问题   <strong>控制反转造成信任问题</strong></p>
 <p>解决方式:Promise的使用 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f4082aca8a09">解决原理</a></p>
-<h4 id="Promises对象"><a href="#Promises对象" class="headerlink" title="Promises对象"></a>Promises对象</h4><h5 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h5><ol>
+<h4 id="Promises对象">Promises对象</h4>
+<h5 id="理解">理解</h5>
+<ol>
 <li>Promise是一个构造函数,用来封装一个异步操作并可以获得异步执行结果</li>
 <li>Promise的参数是一个<strong>回调函数(同步)</strong>,返回值为仍Promise对象</li>
 <li>Promise对象必须实现then方法，而且<em>then必须返回一个Promise对象</em>，<strong>同一个Promise对象的then可以调用多次</strong>，并且回调的执行顺序跟它们被定义时的顺序一致</li>
 <li><strong>then</strong>方法接受两个参数，第一个参数是<strong>成功时的回调</strong>(异步)，在promise由“等待”态转换到“完成”态时调用，另一个是<strong>失败时的回调</strong>(异步).</li>
 </ol>
-<p>then方法返回的是一个新的Promise实例（<strong>注意，不是原来那个Promise实例</strong>）。因此可以采用链式写法，即then方法后面再调用另一个then方法。    </p>
-<h5 id="状态-1"><a href="#状态-1" class="headerlink" title="状态"></a>状态</h5><ul>
-<li><p>1.pending(即将发生的)- - -&gt;resolved/fullfilled</p>
+<p>then方法返回的是一个新的Promise实例（<strong>注意，不是原来那个Promise实例</strong>）。因此可以采用链式写法，即then方法后面再调用另一个then方法。</p>
+<h5 id="状态-2">状态</h5>
+<ul>
+<li>
+<p>1.pending(即将发生的)- - -&gt;resolved/fullfilled</p>
 </li>
-<li><p>2.pending(即将发生的)- - -&gt;rejected</p>
+<li>
+<p>2.pending(即将发生的)- - -&gt;rejected</p>
 </li>
 </ul>
 <blockquote>
 <p>注意：状态只会改变一次，成功-resolved   失败-rejected</p>
 <p>一般来说then(res)-被resolved调用后调用 catch(err)-rejected调用后调用</p>
 <p>特例是finally()函数：</p>
-<p>​    finally 方法用来指定在 promise 结束时，无论结果是 fulfilled 或者是 rejected，都会执行的回调函数。这样可以避免同样的语句需要在 then() 和 catch() 中都要写一次的情况。<br>如果你想在 promise 执行完毕后无论其结果怎样都做一些处理或清理时，finally() 方法可能是有用的<br>​    finally<code>方法的回调函数不接受任何参数，这意味着没有办法知道前面的</code>Promise<code>状态到底是</code>fulfilled<code>还是</code>rejected意味着不能依赖 <code>Promise</code> 执行结果。</p>
-<p>​    <code>finally</code> 方法本身无异常抛出的情况下，总是会返回原来的 <code>Promise</code> 对象值；若抛出异常，则返回异常的 <code>Promise</code> 对象</p>
+<p>​	finally 方法用来指定在 promise 结束时，无论结果是 fulfilled 或者是 rejected，都会执行的回调函数。这样可以避免同样的语句需要在 then() 和 catch() 中都要写一次的情况。<br>
+如果你想在 promise 执行完毕后无论其结果怎样都做一些处理或清理时，finally() 方法可能是有用的<br>
+​	finally<code>方法的回调函数不接受任何参数，这意味着没有办法知道前面的</code>Promise<code>状态到底是</code>fulfilled<code>还是</code>rejected意味着不能依赖 <code>Promise</code> 执行结果。</p>
+<p>​	<code>	finally</code> 方法本身无异常抛出的情况下，总是会返回原来的 <code>Promise</code> 对象值；若抛出异常，则返回异常的 <code>Promise</code> 对象</p>
 </blockquote>
 <p>小试牛刀</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//eg1</span></span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">&quot;sync task1&quot;</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(</span><br><span class="line">    (resolve,reject)=&gt;&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">123</span>)</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">&#x27;setTimeout&#x27;</span>)</span><br><span class="line">          resolve(<span class="string">&quot;成功的数据&quot;</span>);</span><br><span class="line">          reject(<span class="string">&quot;失败的数据&quot;</span>);</span><br><span class="line">        &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;).then(</span><br><span class="line">    value=&gt;<span class="built_in">console</span>.log(<span class="string">&quot;onResolved()1&quot;</span>, value)</span><br><span class="line">    )</span><br><span class="line">    .catch(</span><br><span class="line">    reason=&gt;<span class="built_in">console</span>.log(<span class="string">&quot;onRejected()1&quot;</span>, reason)</span><br><span class="line">    )</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">&quot;sync task2&quot;</span>);</span><br><span class="line"><span class="comment">/*result : </span></span><br><span class="line"><span class="comment">sync task1</span></span><br><span class="line"><span class="comment">123</span></span><br><span class="line"><span class="comment">sync task2</span></span><br><span class="line"><span class="comment">setTimeout</span></span><br><span class="line"><span class="comment">onResolved()1 成功的数据</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//eg2</span></span><br><span class="line"> <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;timout callback()&quot;</span>);</span><br><span class="line">      <span class="built_in">Promise</span>.resolve(<span class="number">1</span>).then(<span class="function">(<span class="params">value</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&quot;onResolved&quot;</span>, value));</span><br><span class="line">   &#125;, <span class="number">0</span>);</span><br><span class="line"> <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;timout callback2()&quot;</span>);</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">Promise</span>.resolve(<span class="number">1</span>).then(<span class="function">(<span class="params">value</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&quot;onResolved&quot;</span>, value));</span><br><span class="line"><span class="built_in">Promise</span>.resolve(<span class="number">1</span>).then(<span class="function">(<span class="params">value</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&quot;onResolved2&quot;</span>, value));</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">result:</span></span><br><span class="line"><span class="comment">onResolved 1</span></span><br><span class="line"><span class="comment">onResolved2 1</span></span><br><span class="line"><span class="comment">timout callback()</span></span><br><span class="line"><span class="comment">onResolved 1</span></span><br><span class="line"><span class="comment">timout callback2()</span></span><br><span class="line"><span class="comment">Promise new的时候会立即执行里面的代码 then是微任务 会在本次任务执行完的时候执行 setTimeout是宏任务 会在下次任务执行的时候执行</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//eg3</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line"> &#125;, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">      resolve();</span><br><span class="line">    &#125;)</span><br><span class="line">      .then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">      &#125;) </span><br><span class="line">      .then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">      &#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">result:</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">5</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h4 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h4><ol>
+<h4 id="async-await">async/await</h4>
+<ol>
 <li>async是用来声明一个异步方法,await用来等待异步方法的执行</li>
 <li>正常情况下<code>await</code>后边是一个Promise对象,返回该对象的结果。如果不是Promise对象,直接返回封装好的promise。<code>**await**</code><strong>都会阻塞函数中后边的代码（即加入微队列）</strong></li>
 </ol>
@@ -627,7 +665,7 @@
 <p>例子</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//eg1</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">await</span> <span class="number">123</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f().then(<span class="function"><span class="params">value</span>=&gt;</span><span class="built_in">console</span>.log(value))</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">result:</span></span><br><span class="line"><span class="comment">123</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//eg2</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">await</span> fn2();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>);<span class="comment">//被await阻塞</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;fn2&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">fn1();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>)</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">result:</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">fn2</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong>Event Table（回调函数对应表）：</strong>用来存储 JavaScript 中的异步事件 (request, setTimeout, IO等) 及其对应的回调函数的列表 ===》 一个事件注册表</li>
+<li>**Event Table（回调函数对应表）：**用来存储 JavaScript 中的异步事件 (request, setTimeout, IO等) 及其对应的回调函数的列表 ===》 一个事件注册表</li>
 </ul>
 <p>在js引擎执行一个任务的时候，它进行判断 ===》 跳转到上面的  js任务</p>
 <p>一些例子</p>
@@ -788,7 +826,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#js%E2%80%94%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">js—同步和异步</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81js%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、js中的事件处理机制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1%E3%80%81%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1、进程、线程、协程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%8A%B6%E6%80%81"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">状态</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E5%B9%B6%E5%8F%91%E5%92%8C%E5%B9%B6%E8%A1%8C"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">2.并发和并行</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、同步和异步</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E4%BD%95%E4%B8%BA%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1.何为同步和异步</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BC%82%E6%AD%A5%E5%92%8C%E5%90%8C%E6%AD%A5%E5%90%84%E8%87%AA%E5%AF%B9%E5%BA%94%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E6%89%A7%E8%A1%8C"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">异步和同步各自对应处理方式执行</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JS%E7%9A%84%E5%BC%82%E6%AD%A5%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">JS的异步执行机制</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">回调函数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Promises%E5%AF%B9%E8%B1%A1"><span class="toc-nav-number">1.2.1.4.</span> <span class="toc-nav-text">Promises对象</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E7%90%86%E8%A7%A3"><span class="toc-nav-number">1.2.1.4.1.</span> <span class="toc-nav-text">理解</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E7%8A%B6%E6%80%81-1"><span class="toc-nav-number">1.2.1.4.2.</span> <span class="toc-nav-text">状态</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#async-await"><span class="toc-nav-number">1.2.1.5.</span> <span class="toc-nav-text">async&#x2F;await</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">js—同步和异步</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81js%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、js中的事件处理机制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1%E3%80%81%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1、进程、线程、协程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%8A%B6%E6%80%81"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">状态</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-%E5%B9%B6%E5%8F%91%E5%92%8C%E5%B9%B6%E8%A1%8C"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">2.并发和并行</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、同步和异步</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-%E4%BD%95%E4%B8%BA%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">1.何为同步和异步</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BC%82%E6%AD%A5%E5%92%8C%E5%90%8C%E6%AD%A5%E5%90%84%E8%87%AA%E5%AF%B9%E5%BA%94%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E6%89%A7%E8%A1%8C"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">异步和同步各自对应处理方式执行</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#JS%E7%9A%84%E5%BC%82%E6%AD%A5%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">JS的异步执行机制</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">回调函数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Promises%E5%AF%B9%E8%B1%A1"><span class="toc-nav-number">1.2.1.4.</span> <span class="toc-nav-text">Promises对象</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E7%90%86%E8%A7%A3"><span class="toc-nav-number">1.2.1.4.1.</span> <span class="toc-nav-text">理解</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E7%8A%B6%E6%80%81-2"><span class="toc-nav-number">1.2.1.4.2.</span> <span class="toc-nav-text">状态</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#async-await"><span class="toc-nav-number">1.2.1.5.</span> <span class="toc-nav-text">async&#x2F;await</span></a></li></ol></li></ol></li></ol></li></ol>
         
         </div>
       </aside>

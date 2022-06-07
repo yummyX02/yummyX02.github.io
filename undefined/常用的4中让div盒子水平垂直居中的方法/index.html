@@ -244,26 +244,15 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              CATEGORIES
+              ABOUT
               
               
             </a>
           </li>
+          
+          
           
           
           
@@ -279,9 +268,20 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -407,7 +407,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">200</span> In Total
+              Words <span class="post-count">201</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,10 +469,15 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="常用div水平垂直居中方法（4种）"><a href="#常用div水平垂直居中方法（4种）" class="headerlink" title="常用div水平垂直居中方法（4种）"></a>常用div水平垂直居中方法（4种）</h1><h2 id="一、使用绝对定位"><a href="#一、使用绝对定位" class="headerlink" title="一、使用绝对定位"></a>一、使用绝对定位</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">background</span>: green;</span><br><span class="line">            <span class="attribute">position</span>:absolute;</span><br><span class="line">            <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">margin</span>: auto;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">//适用于确定了宽度和高度的条件</span><br></pre></td></tr></table></figure>
-<h2 id="二、绝对定位-margin负间距"><a href="#二、绝对定位-margin负间距" class="headerlink" title="二、绝对定位+margin负间距"></a>二、绝对定位+margin负间距</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">	<span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">          <span class="attribute">position</span>: absolute;</span><br><span class="line">          <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">          <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">          <span class="attribute">margin-left</span>:-<span class="number">100px</span>;</span><br><span class="line">          <span class="attribute">margin-top</span>:-<span class="number">100px</span>;</span><br><span class="line">//仍然是需要已知盒子的高度和宽度 注意：<span class="attribute">margin</span>和百分比的设置都是针对<span class="attribute">top</span>和<span class="attribute">left</span></span><br></pre></td></tr></table></figure>
-<h2 id="三、Transforms-变形-绝对定位"><a href="#三、Transforms-变形-绝对定位" class="headerlink" title="三、Transforms 变形 绝对定位"></a>三、Transforms 变形 绝对定位</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> 			<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line"> 			<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">position</span>:absolute;</span><br><span class="line">            <span class="attribute">left</span>:<span class="number">50%</span>;    <span class="comment">/* 定位父级的50% */</span></span><br><span class="line">            <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">            <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>,-<span class="number">50%</span>); <span class="comment">/*自己的50% */</span></span><br><span class="line">// 仍然是需要已知盒子的高度和宽度</span><br></pre></td></tr></table></figure>
-<h2 id="四、flex实现水平居中（popular-and-simple"><a href="#四、flex实现水平居中（popular-and-simple" class="headerlink" title="四、flex实现水平居中（popular and simple)"></a>四、flex实现水平居中（popular and simple)</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123; // 针对父级元素</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">display</span> :flex;</span><br><span class="line">	<span class="attribute">justify-content</span>:center;</span><br><span class="line">	<span class="attribute">align-items</span>:center;</span><br><span class="line">&#125;</span><br><span class="line">//前提：父级元素必须确定高度</span><br></pre></td></tr></table></figure>
+        <h1>常用div水平垂直居中方法（4种）</h1>
+<h2 id="一、使用绝对定位">一、使用绝对定位</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">background</span>: green;</span><br><span class="line">            <span class="attribute">position</span>:absolute;</span><br><span class="line">            <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">margin</span>: auto;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">//适用于确定了宽度和高度的条件</span><br></pre></td></tr></table></figure>
+<h2 id="二、绝对定位-margin负间距">二、绝对定位+margin负间距</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">	<span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">          <span class="attribute">position</span>: absolute;</span><br><span class="line">          <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">          <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">          <span class="attribute">margin-left</span>:-<span class="number">100px</span>;</span><br><span class="line">          <span class="attribute">margin-top</span>:-<span class="number">100px</span>;</span><br><span class="line">//仍然是需要已知盒子的高度和宽度 注意：<span class="attribute">margin</span>和百分比的设置都是针对<span class="attribute">top</span>和<span class="attribute">left</span></span><br></pre></td></tr></table></figure>
+<h2 id="三、Transforms-变形-绝对定位">三、Transforms 变形 绝对定位</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> 			<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line"> 			<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">position</span>:absolute;</span><br><span class="line">            <span class="attribute">left</span>:<span class="number">50%</span>;    <span class="comment">/* 定位父级的50% */</span></span><br><span class="line">            <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">            <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>,-<span class="number">50%</span>); <span class="comment">/*自己的50% */</span></span><br><span class="line">// 仍然是需要已知盒子的高度和宽度</span><br></pre></td></tr></table></figure>
+<h2 id="四、flex实现水平居中（popular-and-simple">四、flex实现水平居中（popular and simple)</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123; // 针对父级元素</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">display</span> :flex;</span><br><span class="line">	<span class="attribute">justify-content</span>:center;</span><br><span class="line">	<span class="attribute">align-items</span>:center;</span><br><span class="line">&#125;</span><br><span class="line">//前提：父级元素必须确定高度</span><br></pre></td></tr></table></figure>
 
 
         <hr>
@@ -627,7 +632,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%B8%B8%E7%94%A8div%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%96%B9%E6%B3%95%EF%BC%884%E7%A7%8D%EF%BC%89"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">常用div水平垂直居中方法（4种）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、使用绝对定位</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D-margin%E8%B4%9F%E9%97%B4%E8%B7%9D"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、绝对定位+margin负间距</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81Transforms-%E5%8F%98%E5%BD%A2-%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、Transforms 变形 绝对定位</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9B%E3%80%81flex%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%EF%BC%88popular-and-simple"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">四、flex实现水平居中（popular and simple)</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">常用div水平垂直居中方法（4种）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">一、使用绝对定位</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BA%8C%E3%80%81%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D-margin%E8%B4%9F%E9%97%B4%E8%B7%9D"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">二、绝对定位+margin负间距</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%89%E3%80%81Transforms-%E5%8F%98%E5%BD%A2-%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">三、Transforms 变形 绝对定位</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%9B%9B%E3%80%81flex%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%EF%BC%88popular-and-simple"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">四、flex实现水平居中（popular and simple)</span></a></li></ol></li></ol>
         
         </div>
       </aside>

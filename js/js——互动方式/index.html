@@ -244,26 +244,15 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              CATEGORIES
+              ABOUT
               
               
             </a>
           </li>
+          
+          
           
           
           
@@ -279,9 +268,20 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -469,31 +469,38 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="js——互动方式"><a href="#js——互动方式" class="headerlink" title="js——互动方式"></a>js——互动方式</h1><p>js推荐使用单引号</p>
-<h2 id="1-document-write"><a href="#1-document-write" class="headerlink" title="1.document.write();"></a>1.document.write();</h2><p>（1）这行代码里面的内容将在页面中直接输出（直接向HTML的输出流写内容），但需要加上双引号</p>
+        <h1>js——互动方式</h1>
+<p>js推荐使用单引号</p>
+<h2 id="1-document-write">1.document.write();</h2>
+<p>（1）这行代码里面的内容将在页面中直接输出（直接向HTML的输出流写内容），但需要加上双引号</p>
 <p>（2）也可以通过一个变量进行输出，不用加双引号</p>
 <p>（3）输出多项内容可以用+号进行连接</p>
 <p>（4）<br>用于输出换行</p>
-<h2 id="2-alert-字符串或变量-；"><a href="#2-alert-字符串或变量-；" class="headerlink" title="2.alert(字符串或变量)；"></a>2.alert(字符串或变量)；</h2><p>这行代码里的内容将会以弹窗的方式显示在页面上</p>
-<h2 id="3-confirm——确认"><a href="#3-confirm——确认" class="headerlink" title="3.confirm——确认"></a>3.confirm——确认</h2><p>包含一个确定和取消按钮</p>
-<p>​    语法：confirm(str);</p>
-<p>​        str:在消息对话框中要显示的文本；</p>
-<p>​        返回值是boolean值：当用户点击确定返回true，点击取消返回false</p>
-<h2 id="4-prompt——提问"><a href="#4-prompt——提问" class="headerlink" title="4.prompt——提问"></a>4.prompt——提问</h2><p>包含一个确定、取消和一个文本输入框</p>
+<h2 id="2-alert-字符串或变量-；">2.alert(字符串或变量)；</h2>
+<p>这行代码里的内容将会以弹窗的方式显示在页面上</p>
+<h2 id="3-confirm——确认">3.confirm——确认</h2>
+<p>包含一个确定和取消按钮</p>
+<p>​	语法：confirm(str);</p>
+<p>​		str:在消息对话框中要显示的文本；</p>
+<p>​		返回值是boolean值：当用户点击确定返回true，点击取消返回false</p>
+<h2 id="4-prompt——提问">4.prompt——提问</h2>
+<p>包含一个确定、取消和一个文本输入框</p>
 <p>语法：prompt（str1，str2）;</p>
-<p>​    str1：要显示在消息对话框里的内容，不可修改</p>
-<p>​    str2：文本框中的内容，可以修改</p>
+<p>​	str1：要显示在消息对话框里的内容，不可修改</p>
+<p>​	str2：文本框中的内容，可以修改</p>
 <p>返回值：</p>
-<p>​    点击确定返回文本框中的内容（默认为字符串类型）</p>
-<p>​    点击取消返回null</p>
-<h2 id="5-window-open——打开新窗口"><a href="#5-window-open——打开新窗口" class="headerlink" title="5.window.open——打开新窗口"></a>5.window.open——打开新窗口</h2><p>open() 方法可以查找一个已经存在或者新建的浏览器窗口。</p>
+<p>​	点击确定返回文本框中的内容（默认为字符串类型）</p>
+<p>​	点击取消返回null</p>
+<h2 id="5-window-open——打开新窗口">5.window.open——打开新窗口</h2>
+<p>open() 方法可以查找一个已经存在或者新建的浏览器窗口。</p>
 <p><strong>语法：</strong></p>
 <figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.<span class="keyword">open</span>(<span class="comment">[URL]</span>, <span class="comment">[窗口名称]</span>, <span class="comment">[参数字符串]</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>参数说明:</strong></p>
 <figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">URL：可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。</span><br><span class="line">窗口名称：可选参数，被打开窗口的名称。</span><br><span class="line">    <span class="number">1</span>.该名称由字母、数字和下划线字符组成。</span><br><span class="line">    <span class="number">2</span>.<span class="string">&quot;_top&quot;</span>、<span class="string">&quot;_blank&quot;</span>、<span class="string">&quot;_self&quot;</span>具有特殊意义的名称。</span><br><span class="line">       <span class="variable">_blank</span>：在新窗口显示目标网页</span><br><span class="line">       <span class="variable">_self</span>：在当前窗口显示目标网页</span><br><span class="line">       <span class="variable">_top</span>：框架网页中在上部窗口中显示目标网页</span><br><span class="line">    <span class="number">3</span>.相同 <span class="built_in">name</span> 的窗口只能创建一个，要想创建多个窗口则 <span class="built_in">name</span> 不能相同。</span><br><span class="line">   <span class="number">4</span>.<span class="built_in">name</span> 不能包含有空格。</span><br><span class="line">参数字符串：可选参数，设置窗口参数，各参数用逗号隔开。</span><br></pre></td></tr></table></figure>
 <p><strong>参数表:</strong></p>
 <p><strong><a target="_blank" rel="noopener" href="https://img.mukewang.com/52e3677900013d6a05020261.jpg"><img src="https://img.mukewang.com/52e3677900013d6a05020261.jpg" alt="img"></a></strong></p>
-<h2 id="6-close-——关闭窗口"><a href="#6-close-——关闭窗口" class="headerlink" title="6.close()——关闭窗口"></a>6.close()——关闭窗口</h2><p><strong>用法：</strong></p>
+<h2 id="6-close-——关闭窗口">6.close()——关闭窗口</h2>
+<p><strong>用法：</strong></p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">window</span>.<span class="keyword">close</span>();   <span class="comment">//关闭本窗口</span></span><br></pre></td></tr></table></figure>
 <p>或</p>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;窗口对象&gt;.<span class="built_in">close</span>();   <span class="comment">//关闭指定的窗口</span></span><br></pre></td></tr></table></figure>
@@ -654,7 +661,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#js%E2%80%94%E2%80%94%E4%BA%92%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">js——互动方式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-document-write"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.document.write();</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-alert-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%88%96%E5%8F%98%E9%87%8F-%EF%BC%9B"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2.alert(字符串或变量)；</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-confirm%E2%80%94%E2%80%94%E7%A1%AE%E8%AE%A4"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3.confirm——确认</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-prompt%E2%80%94%E2%80%94%E6%8F%90%E9%97%AE"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4.prompt——提问</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-window-open%E2%80%94%E2%80%94%E6%89%93%E5%BC%80%E6%96%B0%E7%AA%97%E5%8F%A3"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5.window.open——打开新窗口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-close-%E2%80%94%E2%80%94%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">6.close()——关闭窗口</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">js——互动方式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-document-write"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.document.write();</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-alert-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%88%96%E5%8F%98%E9%87%8F-%EF%BC%9B"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2.alert(字符串或变量)；</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-confirm%E2%80%94%E2%80%94%E7%A1%AE%E8%AE%A4"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3.confirm——确认</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-prompt%E2%80%94%E2%80%94%E6%8F%90%E9%97%AE"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4.prompt——提问</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-window-open%E2%80%94%E2%80%94%E6%89%93%E5%BC%80%E6%96%B0%E7%AA%97%E5%8F%A3"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5.window.open——打开新窗口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-close-%E2%80%94%E2%80%94%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">6.close()——关闭窗口</span></a></li></ol></li></ol>
         
         </div>
       </aside>

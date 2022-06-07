@@ -244,26 +244,15 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              CATEGORIES
+              ABOUT
               
               
             </a>
           </li>
+          
+          
           
           
           
@@ -279,9 +268,20 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -485,7 +485,8 @@
       
     </h3>
     <div class="post-content-preview">
-      js的作用域角度解释a变量的变化123456789101112function foo(func)&#123;    func(&quot;changed&quot;)&#125;function bar()&#123;    let a=&quot;unchanged&quot;;    function b(res)&#123;        a=res    &#125;    foo......
+      js的作用域角度解释a变量的变化
+123456789101112function foo(func)&#123;    func(&quot;changed&quot;)&#125;function bar()&#123;    let a=&quot;unchanged&quot;;    function b(res)&#123;        a=res    &#125;    fo......
     </div>
   </a>
   
@@ -518,12 +519,14 @@
       
     </h3>
     <div class="post-content-preview">
-      C++迭代器迭代器 (iterator) 是 C++ 程序中常用的一种设计模式，它最重要的作用是为访问容器提供了统一的接口，将容器和算法连接起来
+      C++迭代器
+迭代器 (iterator) 是 C++ 程序中常用的一种设计模式，它最重要的作用是为访问容器提供了统一的接口，将容器和算法连接起来
 
-C++ STL 有许多容器，例如 vector、list、deque、map、unordered_map 
+C++ STL 有许多容器，例如 vector、list、deque、map、unordered_map
 
-一、为什么使用迭代器** 要访问顺序容器和关联容器中的元素，需要通过“迭代器”
-** 迭代器是一个变量，相当于容器和操纵容器的算法之间的......
+一、为什么使用迭代器
+** 要访问顺序容器和关联容器中的元素，需要通过“迭代器&quot;
+** 迭代器是一个变量，相当于容器和操纵容器......
     </div>
   </a>
   
@@ -556,11 +559,13 @@ C++ STL 有许多容器，例如 vector、list、deque、map、unordered_map
       
     </h3>
     <div class="post-content-preview">
-      C++sort函数详解1.sort使用：#include 
-　　  using namespace std;
+      C++sort函数详解
+1.sort
+使用：#include 
+using namespace std;
 作用：排序
 时间复杂度：n*lg(n)
-实现原理：sort并不是简单的快速排序，它对普通的快速排序进行了优化，此外，它还结合了插入排序和推排序。系统会根据你的数据形式和数据量自动选择合适的排序方法，这并不是说它每次排序只选择一种方法，它是在一次完整排序中不同的情况选用不同方法，比如给......
+实现原理：sort并不是简单的快速排序，它对普通的快速排序进行了优化，此外，它还结合了插入排序和推排序。系统会根据你的数据形式和数据量自动选择合适的排序方法，这并不是说它每次排序只选择一种方法，它是在一次完整排序中不同的情况选用不同方法，比如给一个......
     </div>
   </a>
   
@@ -593,13 +598,14 @@ C++ STL 有许多容器，例如 vector、list、deque、map、unordered_map
       
     </h3>
     <div class="post-content-preview">
-      C++ 中lower_bound函数该函数内置在#include中，使用了二分查找的思想
+      C++ 中lower_bound函数
+该函数内置在#include中，使用了二分查找的思想
 tips：返回的是地址
 
-在由小到大的排序数组中
 
-  lower_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找第一个大于或等于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。
-  u......
+在由小到大的排序数组中
+lower_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找第一个大于或等于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。
+uppe......
     </div>
   </a>
   
@@ -632,10 +638,11 @@ tips：返回的是地址
       
     </h3>
     <div class="post-content-preview">
-      C++几乎万能的头文件1#include&lt;bits/stdc++.h&gt;
-了解发现它是C++中支持的一个几乎万能的头文件，几乎包含所有的可用到的C++库函数。以后写代码就可以直接引用这一个头文件了，不需要在写一大堆vector、string、map、stack……..
+      C++几乎万能的头文件
+1#include&lt;bits/stdc++.h&gt;
+了解发现它是C++中支持的一个几乎万能的头文件，几乎包含所有的可用到的C++库函数。以后写代码就可以直接引用这一个头文件了，不需要在写一大堆vector、string、map、stack…
 这是该头文件的详细内容：
-12345678910111213141516171819202122232425262......
+1234567891011121314151617181920212223242526272......
     </div>
   </a>
   
@@ -703,9 +710,11 @@ tips：返回的是地址
       
     </h3>
     <div class="post-content-preview">
-      C++读取字符串的三种方式一、cintips：cin遇到”空格” “TAB” “回车”就会结束读取
+      C++读取字符串的三种方式
+一、cin
+tips：cin遇到&quot;空格&quot; “TAB” &quot;回车&quot;就会结束读取
 
-1234567891011121314#include&lt;iostream&gt;using namespace std;int main()&#123;    char s[20];    cin &gt;&gt; s;    cout &lt;&lt; s &lt;&lt; endl......
+1234567891011121314#include&lt;iostream&gt;using namespace std;int main()&#123;    char s[20];    cin &gt;&gt; s;    cout &l......
     </div>
   </a>
   
@@ -738,11 +747,12 @@ tips：返回的是地址
       
     </h3>
     <div class="post-content-preview">
-      静态成员变量必须初始化吗？我们知道C++类的静态成员变量是需要初始化的，但为什么要初始化呢。
+      静态成员变量必须初始化吗？
+我们知道C++类的静态成员变量是需要初始化的，但为什么要初始化呢。
 其实这句话“静态成员变量是需要初始化的”是有一定问题的，应该说“静态成员变量需要定义”才是准确的，而不是初始化。
 两者的区别在于：初始化是赋一个初始值，而定义是分配内存。
 静态成员变量在类中仅仅是声明，没有定义，所以要在类的外面定义，实际上是给静态成员变量分配内存。
-可以通过以下几个例子更形象的说明......
+可以通过以下几个例子更形象的说......
     </div>
   </a>
   
@@ -775,7 +785,8 @@ tips：返回的是地址
       
     </h3>
     <div class="post-content-preview">
-      C++——this的妙用123456789101112131415161718192021class A&#123; int i; public: void Hello() &#123; cout &lt;&lt; &quot;hello&quot; &lt;&lt; endl; &#125;&#125;; int main()&#123; A * p = NULL; p-&gt;Hello......
+      C++——this的妙用
+123456789101112131415161718192021class A&#123; int i; public: void Hello() &#123; cout &lt;&lt; &quot;hello&quot; &lt;&lt; endl; &#125;&#125;; int main()&#123; A * p = NULL; p-&gt;Hell......
     </div>
   </a>
   
@@ -808,7 +819,9 @@ tips：返回的是地址
       
     </h3>
     <div class="post-content-preview">
-      C++友元函数一、友元的作用​     在C++中，我们使用类对数据进行了隐藏和封装，类的数据成员一般都定义为私有成员，成员函数一般都定义为公有的，以此提供类与外界的通讯接口。但是，有时需要定义一些函数，这些函数不是类的一部分，但又需要频繁地访问类的数据成员，这时可以将这些函数定义为该函数的友元函数。除了友元函数外，还有友元类，两者统称为友元。友元的作用是提高了程序的运行效率（即减少了类型检......
+      C++友元函数
+一、友元的作用
+​	 在C++中，我们使用类对数据进行了隐藏和封装，类的数据成员一般都定义为私有成员，成员函数一般都定义为公有的，以此提供类与外界的通讯接口。但是，有时需要定义一些函数，这些函数不是类的一部分，但又需要频繁地访问类的数据成员，这时可以将这些函数定义为该函数的友元函数。除了友元函数外，还有友元类，两者统称为友元。友元的作用是提高了程序的运行效率（即减少了类型检查......
     </div>
   </a>
   
@@ -878,15 +891,11 @@ tips：返回的是地址
   <div class="tags">
     
     
-    <a href="/tags/#C++" title="C++" rel="13">C++</a>
-    
-    
-    
     <a href="/tags/#html" title="html" rel="1">html</a>
     
     
     
-    <a href="/tags/#Vue" title="Vue" rel="3">Vue</a>
+    <a href="/tags/#C++" title="C++" rel="13">C++</a>
     
     
     
@@ -894,11 +903,11 @@ tips：返回的是地址
     
     
     
+    <a href="/tags/#Vue" title="Vue" rel="3">Vue</a>
+    
+    
+    
     <a href="/tags/#js" title="js" rel="10">js</a>
-    
-    
-    
-    <a href="/tags/#css" title="css" rel="1">css</a>
     
     
     
@@ -907,6 +916,10 @@ tips：返回的是地址
     
     
     <a href="/tags/#vs code" title="vs code" rel="1">vs code</a>
+    
+    
+    
+    <a href="/tags/#css" title="css" rel="1">css</a>
     
     
   </div>

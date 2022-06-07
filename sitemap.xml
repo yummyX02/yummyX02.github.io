@@ -270,13 +270,6 @@
 
   
   <url>
-    <loc>https://yummyx02.github.io/tags/C/</loc>
-    <lastmod>2022-06-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yummyx02.github.io/tags/html/</loc>
     <lastmod>2022-06-07</lastmod>
     <changefreq>daily</changefreq>
@@ -284,7 +277,7 @@
   </url>
   
   <url>
-    <loc>https://yummyx02.github.io/tags/Vue/</loc>
+    <loc>https://yummyx02.github.io/tags/C/</loc>
     <lastmod>2022-06-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -298,14 +291,14 @@
   </url>
   
   <url>
-    <loc>https://yummyx02.github.io/tags/js/</loc>
+    <loc>https://yummyx02.github.io/tags/Vue/</loc>
     <lastmod>2022-06-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://yummyx02.github.io/tags/css/</loc>
+    <loc>https://yummyx02.github.io/tags/js/</loc>
     <lastmod>2022-06-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -320,6 +313,13 @@
   
   <url>
     <loc>https://yummyx02.github.io/tags/vs-code/</loc>
+    <lastmod>2022-06-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yummyx02.github.io/tags/css/</loc>
     <lastmod>2022-06-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
